@@ -64,10 +64,10 @@ export const Stemning = () => {
                     <Image src={pitaIcon} alt="" className="size-8" />
                 </div>
 
-                <div className="text-center mt-4 md:mt-8">
+                <div className="text-center mt-4 md:mt-8 max-w-[340px] mx-auto md:max-w-full">
                     <p className="text-zinc-400 text-sm font-bold">Har du husket appetiten?</p>
                     <h2 className="text-xl md:text-4xl">Hos Kebab House har vi altid den bedste <span className="text-green-600">stemning!</span></h2>
-                    <p className="mt-6">Se vores varieret menu, hvor gode friske råvare altid er i prioritet</p>
+                    <p className="mt-3 md:mt-6">Se vores varieret menu, hvor gode friske råvare altid er i prioritet</p>
                 </div>
 
                 <div className="flex justify-center mt-6 md:mt-14">

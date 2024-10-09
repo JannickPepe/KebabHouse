@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import InputForm from "@/components/UserQuestion";
+import FrokostTilbud  from "./sections/FrokostTilbud";
 import HeroLanding from "./sections/Hero";
 import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
@@ -19,9 +21,9 @@ export default function Home() {
         <TopFive />
       </section>
 
-      {/* KATEGORIER */}
+      {/* FROKOST TILBUD */}
       <section>
-
+        <FrokostTilbud />
       </section>
 
       {/* KEBAB HOUSE STEMNING */}
@@ -31,7 +33,8 @@ export default function Home() {
 
       {/* KONTAKT */}
       <section>
-
+      <h1>Submit Your Data</h1>
+      <InputForm/>
       </section>
 
     </div>
