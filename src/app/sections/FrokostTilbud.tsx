@@ -7,7 +7,7 @@ import tilbudOne from '../../assets/icons/shawarma.png';
 import tilbudTwo from '../../assets/icons/pita.png';
 import tilbudThree from '../../assets/icons/pizza.png';
 import tilbudfour from '../../assets/icons/kebabbox.png';
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const FrokostTilbud = () => {
     const [position, setPosition] = useState(0);
@@ -28,18 +28,18 @@ const FrokostTilbud = () => {
         <section className="overflow-hidden px-4 py-12">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-8 flex justify-between gap-4">
-                    <h3 className="text-xl md:text-4xl font-bold leading-[1.2] max-w-[740px]">
+                    <h3 className="text-lg md:text-4xl font-bold leading-[1.2] max-w-[740px]">
                         <span className="underline">Frokosttilbud Gælder</span> alle ugens dage fra kl. 11.00 - 15.00. <br/> &quot;<span className="underline">Gælder ikke</span> ved udbringning&quot;
                     </h3>
                     <div className="flex gap-2">
                         <button
-                            className="h-fit bg-black p-4 text-2xl text-white transition-colors hover:bg-green-700 rounded-full"
+                            className="h-fit bg-black p-4 text-sm md:text-2xl text-white transition-colors hover:bg-green-700 rounded-full"
                             onClick={shiftLeft}
                         >
                             <FiChevronLeft />
                         </button>
                         <button
-                            className="h-fit bg-black p-4 text-2xl text-white transition-colors hover:bg-green-700 rounded-full"
+                            className="h-fit bg-black p-4 text-sm md:text-2xl text-white transition-colors hover:bg-green-700 rounded-full"
                             onClick={shiftRight}
                         >
                             <FiChevronRight />
@@ -56,7 +56,7 @@ const FrokostTilbud = () => {
     );
 };
 
-const Feature = ({ position, index, title, description, image } : { position: number; index: number; title: string; description: string; }) => {
+const Feature = ({ position, index, title, description, image } : { position: number; index: number; title: string; description: string; image: StaticImageData }) => {
     const translateAmt = position >= index ? index * 100 : index * 100 - 100 * (index - position);
 
     return (

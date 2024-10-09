@@ -33,8 +33,7 @@ export default function Home() {
 
       {/* KONTAKT */}
       <section>
-      <h1>Submit Your Data</h1>
-      <InputForm/>
+        <InputForm/>
       </section>
 
     </div>
