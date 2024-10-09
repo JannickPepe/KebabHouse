@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    env: {
+        NEXT_APPWRITE_ENDPOINT: process.env.NEXT_APPWRITE_ENDPOINT,
+        NEXT_APPWRITE_PROJECT: process.env.NEXT_APPWRITE_PROJECT,
+        NEXT_APPWRITE_API_KEY: process.env.NEXT_APPWRITE_API_KEY,
+        NEXT_APPWRITE_DATABASE_ID: process.env.NEXT_APPWRITE_DATABASE_ID,
+        NEXT_APPWRITE_COLLECTION_PIZZA_ID: process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID,
+        NEXT_APPWRITE_STORAGE_ID: process.env.NEXT_APPWRITE_STORAGE_ID,
+    },
+};
 
 export default nextConfig;

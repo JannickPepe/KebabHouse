@@ -1,0 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+namespace NodeJS {
+    interface ProcessEnv {
+        NEXT_APPWRITE_ENDPOINT: string;
+        NEXT_APPWRITE_PROJECT: string;
+        NEXT_APPWRITE_API_KEY: string;
+        NEXT_APPWRITE_DATABASE_ID: string;
+        NEXT_APPWRITE_COLLECTION_PIZZA_ID: string;
+        NEXT_APPWRITE_STORAGE_ID: string;
+      // Add other variables as needed
+      API_URL?: string; // Optional because it won't always exist
+    }
+}
