@@ -13,7 +13,7 @@ import testLogo from "../assets/images/testlogo.jpeg";
 const Navbar = () => {
 
     return (
-        <section className="w-full overflow-hidden bg-black">
+        <section className="w-full relative overflow-hidden bg-black z-[9999]">
             <GlassNavigation />
         </section>
     );
@@ -48,6 +48,7 @@ const GlassNavigation = () => {
         return () =>
         // eslint-disable-next-line react-hooks/exhaustive-deps
         navRef.current?.removeEventListener("mousemove", handleMouseMove);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

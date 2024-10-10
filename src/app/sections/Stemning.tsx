@@ -53,7 +53,7 @@ export const Stemning = () => {
         <section className="md:flex justify-center gap-8 lg:gap-12 py-10 md:py-24 lg:py-28">
             <div>
                 {imageUrl ? (
-                    <motion.img className="h-72 w-72 rounded-lg hover:scale-110 transition hidden md:block" src={imageUrl} alt="Appwrite Image" />
+                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden md:block" src={imageUrl} alt="Appwrite Image" />
                 ) : (
                     <p>Loading image...</p>
                 )}
@@ -81,7 +81,7 @@ export const Stemning = () => {
 
             <div>
                 {dinerTableTwoUrl ? (
-                    <motion.img className="h-72 w-72 rounded-lg hover:scale-110 transition mx-auto md:mx-0 mt-8 md:mt-0" src={dinerTableTwoUrl} alt="Appwrite Image" />
+                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 mx-auto md:mx-0 mt-8 md:mt-0" src={dinerTableTwoUrl} alt="Appwrite Image" />
                 ) : (
                     <p>Loading image...</p>
                 )}

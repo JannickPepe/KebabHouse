@@ -8,7 +8,7 @@ import { GlobalButton } from "../../components/GlobalButton";
 
 const HeroLanding = () => {
     return (
-        <section className="w-full px-8 pt-28 pb-12 lg:pt-36 lg:pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
+        <section className="w-full px-8 pb-12 pt-28 md:pt-40 lg:pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
             <div>
                 <span className="block mb-2 text-xs uppercase md:ml-1 text-green-500 font-bold">
                     Kvalitet mad hver dag
