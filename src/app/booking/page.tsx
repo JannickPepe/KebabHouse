@@ -116,12 +116,12 @@ const FormSelect = ({ selected, setSelected } : {selected: string; setSelected: 
     <div className="border-[1px] rounded border-white overflow-hidden font-medium w-fit">
       <button
         className={`${
-          selected === "individual" ? "text-green-600" : "text-white"
+          selected === "booking" ? "text-indigo-600" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("individual")}
+        onClick={() => setSelected("booking")}
       >
-        <span className="relative z-10">Spørgsmål</span>
-        {selected === "individual" && (
+        <span className="relative z-10">Booking her</span>
+        {selected === "booking" && (
           <motion.div
             transition={BASE_TRANSITION}
             layoutId="form-tab"
@@ -131,12 +131,12 @@ const FormSelect = ({ selected, setSelected } : {selected: string; setSelected: 
       </button>
       <button
         className={`${
-          selected === "booking" ? "text-indigo-600" : "text-white"
+          selected === "individual" ? "text-green-600" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("booking")}
+        onClick={() => setSelected("individual")}
       >
-        <span className="relative z-10">Booking her</span>
-        {selected === "booking" && (
+        <span className="relative z-10">Spørgsmål</span>
+        {selected === "individual" && (
           <motion.div
             transition={BASE_TRANSITION}
             layoutId="form-tab"

@@ -32,7 +32,7 @@ const FrokostTilbud = () => {
                 <div className="mb-8 flex justify-between gap-4">
                     <div className="text-lg md:text-4xl font-bold leading-[1.2] max-w-[740px] space-y-2">
                         <h3><span className="underline">Frokosttilbud Gælder</span> alle ugens dage fra kl. 11.00 - 15.00. </h3>
-                        <h3>&quot;<span className="underline">Gælder ikke</span> ved udbringning&quot;</h3>
+                        <h3><span className="underline">Gælder Ikke</span> ved udbringning!</h3>
                     </div>
                     <div className="flex gap-2">
                         <button

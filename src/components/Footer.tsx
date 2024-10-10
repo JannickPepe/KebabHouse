@@ -16,17 +16,17 @@ const Footer = () => {
                         <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Kontakt os
                         </h3>
-                        <p className="flex justify-center items-top mt-2 md:mt-4 text-lg text-zinc-500 font-bold">
+                        <p className="flex justify-center items-top mt-2 md:mt-4 text-base md:text-lg text-zinc-500 font-bold">
                             <RiMapPinLine className="size-6 mt-0.5 text-zinc-400" />
-                            Høje Taastrup Boulvard 24, <br/>2630, Høje Tåstrup, Denmark
+                            Høje Taastrup Boulvard 24, <br/>2630, Høje Taastrup, Denmark
                         </p>
                         <hr className="max-w-[220px] mx-auto my-2 md:my-3"/>
                     
-                        <p className="flex justify-center items-top gap-3 text-lg text-zinc-500 font-bold">
+                        <p className="flex justify-center items-top gap-3 text-base md:text-lg text-zinc-500 font-bold">
                             <BsTelephoneInbound className="size-6 mt-0.5 text-zinc-400" />
                             +45 43 52 72 71
                         </p>
-                        <p className="flex justify-center items-top gap-3 text-zinc-500 text-lg underline font-bold">
+                        <p className="flex justify-center items-top gap-3 text-zinc-500 text-base md:text-lg underline font-bold">
                             <IoMailOutline className="size-6 mt-0.5 text-zinc-400" />
                             info@cafekebabhouse.dk
                         </p>
@@ -37,13 +37,13 @@ const Footer = () => {
                             Kebab House & Cafe
                             <Image src={footerImg} className="h-8 w-8 md:h-12 md:w-12" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
                         </div>
-                        <div className="text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
+                        <div className="text-base md:text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
                             <p>Din favorit leveret til døren på <span className="underline">30- 45 min</span></p>
                             <p><span className="underline">Mandage til fredage</span> Fra kl 16:00 - 22:00</p>
                             <p><span className="underline">Lørdage til søndage</span> Fra 11:00 - 22:00</p>
                         </div>
 
-                        <button className="flex mx-auto gap-2 items-center text-lg text-center mt-4 mb-8 md:mb-0 md:mt-8 px-3 py-2 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:text-zinc-300 transition group">
+                        <button className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-0 md:mt-8 px-3 py-2 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:text-zinc-300 transition group">
                             Google Maps <FaArrowRightLong className="size-5 mt-1 group-hover:text-white group-hover:ml-1 transition-all"/>
                         </button>
                     </div>
@@ -51,8 +51,8 @@ const Footer = () => {
                         <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Links
                         </h3>
-                        <div className="mt-4 text-lg text-zinc-500 font-bold uppercase">
-                            <ul className="space-y-4 tracking-wider">
+                        <div className="mt-4 text-base md:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
+                            <ul className="flex md:block md:space-y-4 tracking-wider">
                                 <li className="flex justify-center items-center mr-10 group">
                                     <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
                                     <a href="/about" className="hover:underline">Om Os</a>
