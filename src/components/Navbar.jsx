@@ -27,6 +27,7 @@ const GlassNavigation = () => {
     const navRef = useRef(null);
 
     const handleMouseMove = ({ offsetX, offsetY, target }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const isNavElement = [...target.classList].includes("glass-nav");
 
