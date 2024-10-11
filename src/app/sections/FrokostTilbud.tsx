@@ -30,7 +30,7 @@ const FrokostTilbud = () => {
         <section className="overflow-hidden px-4 py-12">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-8 flex justify-between gap-4">
-                    <div className="text-lg md:text-4xl font-bold leading-[1.2] max-w-[740px] space-y-2">
+                    <div className="text-lg md:text-4xl font-bold leading-[1.2] max-w-[740px] space-y-2 text-zinc-700 dark:text-white">
                         <h3><span className="underline">Frokosttilbud Gælder</span> alle ugens dage fra kl. 11.00 - 15.00. </h3>
                         <h3><span className="underline">Gælder Ikke</span> ved udbringning!</h3>
                     </div>
@@ -70,7 +70,7 @@ const Feature = ({ position, index, title, description, image } : { position: nu
                 duration: 0.35,
             }}
             className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 rounded-lg ${
-                index % 2 ? "bg-black text-white" : "bg-green-600/60"
+                index % 2 ? "bg-black text-white" : "bg-green-600/60 text-black dark:text-white"
             }`}
         >
             <Image src={image} alt="" className="absolute right-2 top-2 text-7xl" />

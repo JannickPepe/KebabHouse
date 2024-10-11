@@ -8,7 +8,7 @@ import Contact from "./sections/UserQuestion";
 export default function Home() {
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 
       {/* LANDING */}
       <section>

@@ -21,28 +21,28 @@ export const TopFive = () => {
     return (
         <section className="py-10 md:py-24 lg:28">
             <div className=" text-center">
-                <p className="text-zinc-400 text-sm font-bold">Smag det bedste af det bedste</p>
-                <h2 className="text-lg md:text-4xl lg:text-5xl">Vores <span className="text-green-600">Top 5</span> af vores bedste <span className="text-green-600">pizza&apos;er</span></h2>
+                <p className="text-slate-600 dark:text-zinc-400 text-sm font-bold">Smag det bedste af det bedste</p>
+                <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">Vores <span className="text-green-600">Top 5</span> af vores bedste <span className="text-green-600">pizza&apos;er</span></h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:gap-0 md:grid-cols-5 mt-4 md:mt-10 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 max-w-7xl mx-auto">
                 {pizzas.map((pizza) => {
                     return (
                         <div className="flex flex-col justify-center items-center" key={pizza.title} >
-                            <div className="text-lg flex items-center gap-1">
-                                <IoFastFoodOutline color="#16a34a"/>
+                            <div className="text-lg flex items-center gap-1 text-black dark:text-zinc-400">
+                                <IoFastFoodOutline className="text-red-600 dark:text-green-600"/>
                                 {pizza.title}
                             </div>
 
                             <motion.img className="h-44 w-44 rounded-md my-2 shadow-sm shadow-red-600 hover:scale-105 transition" src={pizza.pizzaimg} alt="hello"/>
                             
-                            <div className="max-w-[220px] text-center my-1 md:my-2">
+                            <div className="max-w-[220px] text-center my-1 md:my-2 text-black dark:text-white">
                                 {pizza.description}
                             </div>
 
                             <div className="mt-3 flex gap-6 items-center">
-                                <span className="text-sm border-2 border-green-600 py-2 px-3 rounded-full">
-                                    {pizza.price}kr / {pizza.pricediscount}kr <span className="text-xs text-zinc-400">(Frokost Tilbud)</span>
+                                <span className="text-sm border-2 text-black dark:text-white border-green-600 py-2 px-3 rounded-full">
+                                    {pizza.price}kr / {pizza.pricediscount}kr <span className="text-xs text-red-700 dark:text-zinc-400">(Frokost Tilbud)</span>
                                 </span>
                             </div>
                         </div>

@@ -50,8 +50,8 @@ export const Stemning = () => {
 
 
     return (
-        <section className="md:flex justify-center gap-8 lg:gap-12 py-10 md:py-24 lg:py-28">
-            <div>
+        <section className="lg:flex lg:justify-center gap-8 lg:gap-12 py-10 md:py-24 lg:py-28">
+            <div className="flex justify-center items-center">
                 {imageUrl ? (
                     <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden md:block" src={imageUrl} alt="Appwrite Image" />
                 ) : (
@@ -59,18 +59,18 @@ export const Stemning = () => {
                 )}
             </div>
 
-            <div className="max-w-md relative">
+            <div className="max-w-md relative md:mx-auto lg:mx-0 md:pt-6 md:pb-12 lg:pt-0 lg:pb-0">
                 <div className="absolute top-1/2 left-1/2 translate-y-14 translate-x-20 hidden md:block">
                     <Image src={pitaIcon} alt="" className="size-8" />
                 </div>
 
                 <div className="text-center mt-4 md:mt-8 max-w-[340px] mx-auto md:max-w-full">
-                    <p className="text-zinc-400 text-sm font-bold">Har du husket appetiten?</p>
-                    <h2 className="text-xl md:text-4xl">Hos Kebab House har vi altid den bedste <span className="text-green-600">stemning!</span></h2>
-                    <p className="mt-3 md:mt-6">Se vores varieret menu, hvor gode friske råvare altid er i prioritet</p>
+                    <p className="dark:text-zinc-400 text-red-500 text-sm font-bold">Har du husket appetiten?</p>
+                    <h2 className="text-xl md:text-4xl text-black dark:text-zinc-400">Hos Kebab House har vi altid den bedste <span className="text-green-600">stemning!</span></h2>
+                    <p className="mt-3 md:mt-6 text-black dark:text-zinc-400">Se vores varieret menu, hvor gode friske råvare altid er i prioritet</p>
                 </div>
 
-                <div className="flex justify-center mt-6 md:mt-14">
+                <div className="flex justify-center mt-6 md:mt-14 text-black dark:text-zinc-400">
                     <GlobalButton>Vores Menu</GlobalButton>
                 </div>
 
@@ -79,7 +79,7 @@ export const Stemning = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="flex justify-center items-center">
                 {dinerTableTwoUrl ? (
                     <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 mx-auto md:mx-0 mt-8 md:mt-0" src={dinerTableTwoUrl} alt="Appwrite Image" />
                 ) : (

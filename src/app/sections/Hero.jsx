@@ -10,19 +10,19 @@ const HeroLanding = () => {
     return (
         <section className="w-full px-8 pb-12 pt-28 md:pt-40 lg:pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
             <div>
-                <span className="block mb-2 text-xs uppercase md:ml-1 text-green-500 font-bold">
+                <span className="block mb-2 text-xs uppercase md:ml-1 text-zinc-400 dark:text-green-500 font-bold">
                     Kvalitet mad hver dag
                 </span>
 
-                <h3 className="text-4xl md:text-6xl lg:text-7xl font-black max-w-2xl">
+                <h3 className="text-4xl md:text-6xl lg:text-7xl font-black max-w-2xl text-black dark:text-white">
                     Kebab House - Mad med et smil
                 </h3>
 
-                <p className="text-base md:text-lg text-zinc-500 my-4 md:my-6 max-w-[450px]">
+                <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-500 my-4 md:my-6 max-w-[450px]">
                     Velkommen til Kebab House, hvor vi har høj kvalitet af mad samt en varieret menukort <br/>
                 </p>
 
-                <div className="flex justify-center md:justify-start mt-6 md:mt-0">
+                <div className="flex justify-center md:justify-start mt-6 md:mt-0 text-zinc-800 dark:text-white">
                     <GlobalButton>Vores Menukort</GlobalButton>
                 </div>
             </div>

@@ -8,7 +8,7 @@ import { GlobalButton } from "./GlobalButton";
 import { CiPizza } from "react-icons/ci";
 import Image from "next/image";
 import testLogo from "../assets/images/testlogo.jpeg";
-
+import ToggleWrapper from "./NewThemeToggle";
 
 const Navbar = () => {
 
@@ -59,7 +59,7 @@ const GlassNavigation = () => {
             style={{
                 cursor: hovered ? "none" : "auto",
             }}
-            className="glass-nav fixed left-0 right-0 top-0 z-10 mx-auto max-w-6xl overflow-hidden border-[1px] border-white/10 bg-gradient-to-br from-green-500/20 to-green-500/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
+            className="glass-nav fixed left-0 right-0 top-0 z-10 mx-auto max-w-6xl overflow-hidden border-[1px] border-black/30 dark:border-white/10 bg-gradient-to-br from-slate-800/60 to-slate-800/50  dark:from-green-500/20 dark:to-green-500/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
         >
             <div className="glass-nav md:flex items-center justify-between px-5 py-5">
                 <Cursor hovered={hovered} scope={scope} />
@@ -116,7 +116,9 @@ const GlassLink = ({ text }) => {
 const Buttons = ({ setMenuOpen }) => (
     <div className="flex items-center gap-4">
         <GlobalButton className="ml-1.5">Menukort</GlobalButton>
-
+        <div className="hidden md:block">
+            <ToggleWrapper />
+        </div>
         <button
             onClick={() => setMenuOpen((pv) => !pv)}
             className="ml-40 block scale-100 text-3xl text-white/90 transition-all hover:scale-105 hover:text-white active:scale-95 md:hidden"
@@ -140,11 +142,12 @@ const MobileMenu = ({ menuOpen }) => {
             className="block overflow-hidden md:hidden"
         >
             <div ref={ref} className="flex items-center justify-between px-4 pb-4">
-                <div className="flex flex-wrap items-center ml-2">
+                <div className="flex flex-wrap items-center ml-2 gap-2">
                     <a href="/"><Image src={testLogo} alt="kebab house logo" className="size-10 rounded-full" /></a>
                     <a href="about"><GlassLink text="Om Os" /></a>
                     <a href="booking"><GlassLink text="Booking" /></a>
                     <a href="contact"><GlassLink text="kontakt" /></a>
+                    <ToggleWrapper />
                 </div>
             </div>
         </motion.div>

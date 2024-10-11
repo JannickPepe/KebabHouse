@@ -10,23 +10,23 @@ import { BsTelephoneInbound } from "react-icons/bs";
 
 const Footer = () => {
     return (
-        <footer className="pt-16 md:pt-24 pb-6 text-center">
-                <div className="grid grid-cols-1 md:grid-cols-3">
+        <footer className="pt-2 md:pt-8 lg:pt-24 pb-6 text-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div>
                         <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Kontakt os
                         </h3>
-                        <p className="flex justify-center items-top mt-2 md:mt-4 text-base md:text-lg text-zinc-500 font-bold">
+                        <p className="flex justify-center items-top mt-2 md:mt-4 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
                             <RiMapPinLine className="size-6 mt-0.5 text-zinc-400" />
                             Høje Taastrup Boulvard 24, <br/>2630, Høje Taastrup, Denmark
                         </p>
                         <hr className="max-w-[220px] mx-auto my-2 md:my-3"/>
                     
-                        <p className="flex justify-center items-top gap-3 text-base md:text-lg text-zinc-500 font-bold">
+                        <p className="flex justify-center items-top gap-3 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
                             <BsTelephoneInbound className="size-6 mt-0.5 text-zinc-400" />
                             +45 43 52 72 71
                         </p>
-                        <p className="flex justify-center items-top gap-3 text-zinc-500 text-base md:text-lg underline font-bold">
+                        <p className="flex justify-center items-top gap-3 text-zinc-500 text-base md:text-base lg:text-lg underline font-bold">
                             <IoMailOutline className="size-6 mt-0.5 text-zinc-400" />
                             info@cafekebabhouse.dk
                         </p>
@@ -35,9 +35,9 @@ const Footer = () => {
                     <div className="text-lg md:text-2xl lg:text-3xl font-semibold text-zinc-400 mt-6 md:mt-0 lg:mt-0">
                         <div className="flex justify-center items-center gap-4 uppercase">
                             Kebab House & Cafe
-                            <Image src={footerImg} className="h-8 w-8 md:h-12 md:w-12" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
+                            <Image src={footerImg} className="h-8 w-8 lg:h-12 lg:w-12 hidden lg:block" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
                         </div>
-                        <div className="text-base md:text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
+                        <div className="text-base md:text-base lg:text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
                             <p>Din favorit leveret til døren på <span className="underline">30- 45 min</span></p>
                             <p><span className="underline">Mandage til fredage</span> Fra kl 16:00 - 22:00</p>
                             <p><span className="underline">Lørdage til søndage</span> Fra 11:00 - 22:00</p>
@@ -51,7 +51,7 @@ const Footer = () => {
                         <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Links
                         </h3>
-                        <div className="mt-4 text-base md:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
+                        <div className="mt-4 justify-center flex text-sm md:text-base lg:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
                             <ul className="flex md:block md:space-y-4 tracking-wider">
                                 <li className="flex justify-center items-center mr-10 group">
                                     <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
