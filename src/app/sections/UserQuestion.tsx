@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { databases } from '../../lib/appwrite';
 
+
 const Contact = () => {
     const [name, setName] = useState('');
     const [mail, setEmail] = useState('');
@@ -10,7 +11,7 @@ const Contact = () => {
 
     const [message, setMessage] = useState(''); // Show a confirmation message when email send
     const [isFormValid, setIsFormValid] = useState(false); // disable submit button as default
-
+    
     const handleInputChange = () => {
         // Check if all fields are filled
         if (name && mail && question) {
@@ -19,6 +20,7 @@ const Contact = () => {
             setIsFormValid(false);
         }
     };
+    
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -26,7 +28,6 @@ const Contact = () => {
             await databases.createDocument(process.env.NEXT_APPWRITE_DATABASE_ID, process.env.NEXT_APPWRITE_COLLECTION_EMAILS_ID, 'unique()', { name, mail, question });
             setMessage('Beskeden er nu sendt!');
             setTimeout(() => setMessage(''), 2000);
-
         } catch (error) {
             console.error('Error submitting email:', error);
         };
@@ -40,7 +41,6 @@ const Contact = () => {
 
     return (
         <section className='py-10 lg:py-20'>
-
             <div className="font-[sans-serif] max-w-4xl mx-auto relative  rounded-lg py-6">
                 <div className="grid lg:grid-cols-1 items-center">
                     <div className="lg:col-span-2 md:max-w-lg lg:max-w-full md:mx-auto lg:mx-0 md:border border-green-700 opacity-90 rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">

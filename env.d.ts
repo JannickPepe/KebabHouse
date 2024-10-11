@@ -8,6 +8,7 @@ namespace NodeJS {
         NEXT_APPWRITE_COLLECTION_PIZZA_ID: string;
         NEXT_APPWRITE_STORAGE_ID: string;
         NEXT_APPWRITE_COLLECTION_EMAILS_ID: string;
+        NEXT_APPWRITE_COLLECTION_RATING: string;
       // Add other variables as needed
       API_URL?: string; // Optional because it won't always exist
     }

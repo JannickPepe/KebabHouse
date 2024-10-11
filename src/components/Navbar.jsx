@@ -59,7 +59,7 @@ const GlassNavigation = () => {
             style={{
                 cursor: hovered ? "none" : "auto",
             }}
-            className="glass-nav fixed left-0 right-0 top-0 z-10 mx-auto max-w-6xl overflow-hidden border-[1px] border-black/30 dark:border-white/10 bg-gradient-to-br from-slate-800/60 to-slate-800/50  dark:from-green-500/20 dark:to-green-500/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
+            className="glass-nav fixed left-0 right-0 top-0 z-10 mx-auto max-w-6xl overflow-hidden border-[1px] border-black/30 dark:border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/60  dark:from-green-500/20 dark:to-green-500/5 backdrop-blur md:left-6 md:right-6 md:top-6 md:rounded-2xl"
         >
             <div className="glass-nav md:flex items-center justify-between px-5 py-5">
                 <Cursor hovered={hovered} scope={scope} />

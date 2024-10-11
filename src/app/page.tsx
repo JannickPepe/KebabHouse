@@ -1,5 +1,6 @@
 import FrokostTilbud  from "./sections/FrokostTilbud";
 import HeroLanding from "./sections/Hero";
+import Ratings from "./sections/Ratings";
 import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
@@ -28,6 +29,11 @@ export default function Home() {
       {/* KEBAB HOUSE STEMNING */}
       <section>
         <Stemning />
+      </section>
+
+      {/* RATING  */}
+      <section>
+        <Ratings />
       </section>
 
       {/* KONTAKT */}
