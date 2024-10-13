@@ -5,6 +5,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { aboutFour, aboutOne, aboutThree, aboutTwo } from "../../utils/index";
 import Image from "next/image";
 import { GlobalButton } from "@/components/GlobalButton";
+import GlobalReadMore from "@/components/GlobalReadMore";
 
 
 const About = () => {
@@ -27,21 +28,20 @@ const Features = () => {
 };
 
 const Copy = () => {
+
+    const longText = "Kendt i Høje Taastrup for sin lækre og autentiske kebab. Beliggenhed på Høje Taastrup Boulevard 24 Kebab House tibyder et bredt udvalg af retter, herunder pizzaer, burgere, og selvfølgelig deres signatur kebab. Restauranten er et yndet valg blandt lokale for både frokost og aftensmad, og de tilbyder også takeaway og levering. Deres menu inkluderer alt fra klassiske kebabretter til mere Cafe Sandwhich, med friske ingredienser altid. Med en hyggelig atmosfære og venligt personale, er Kebab House et sted, hvor man kan slappe af og nyde et godt måltid.";
+
     return (
-        <div className="flex h-fit w-full flex-col justify-center  md:sticky md:top-0 md:h-[120vh]">
-            <p className="uppercase text-xs ml-1 border-2 border-green-600 rounded-xl mx-auto px-4 py-1">Om os</p>
-            <h2 className="mb-4 text-5xl font-medium leading-tight uppercase">
+        <div className="flex h-fit w-full flex-col justify-center md:sticky md:top-0 md:h-[100vh]">
+            <p className="uppercase text-xs font-bold ml-1 border-2 border-green-600 rounded-xl mx-auto px-4 py-1 mt-4 md:mt-0">Om os</p>
+            <h2 className="mb-4 mt-1 text-xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase">
                 Cafe og Kebab House
             </h2>
-            <p className="text-base text-zinc-400 font-medium">
-                Kendt i Høje Taastrup for sin lækre og autentiske kebab. Beliggenhed på Høje Taastrup Boulevard 24 <br/>
-                Kebab House tibyder et bredt udvalg af retter, herunder pizzaer, burgere, og selvfølgelig deres signatur kebab.<br/><br/>
-                Restauranten er et yndet valg blandt lokale for både frokost og aftensmad, og de tilbyder også takeaway og levering.<br/> 
-                Deres menu inkluderer alt fra klassiske kebabretter til mere Cafe Sandwhich, med friske ingredienser altid.<br/><br/>
-                Med en hyggelig atmosfære og venligt personale, er Kebab House et sted, hvor man kan slappe af og nyde et godt måltid.<br/>
-            </p>
+            <div className="text-base text-zinc-400 font-medium">
+                <GlobalReadMore text={longText} maxLength={300} className="text-green-600" />
+            </div>
 
-            <a href="/" className="text-base text-zinc-400 underline mt-4 hover:text-white hover:scale-105 transition font-bold">
+            <a href="/booking" className="text-base text-zinc-400 underline mt-4 hover:text-white hover:scale-105 transition font-bold">
                 Har du været der før, eller planlægger du at besøge det snart?
             </a>
 

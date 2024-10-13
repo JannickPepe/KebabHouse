@@ -6,6 +6,7 @@ import { databases } from '../lib/appwrite';
 const RatingsCount = () => {
   const [ratings, setRatings] = useState<number[]>([]);
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0, 0]);
+  const [average, setAverage] = useState(0);
 
   useEffect(() => {
     const fetchRatings = async () => {
@@ -25,6 +26,9 @@ const RatingsCount = () => {
         });
         setCounts(countsArray);
 
+        const total = ratingsData.reduce((acc: number, rating: number) => acc + rating, 0);
+        setAverage(total / ratingsData.length);
+
       } catch (error) {
         console.error('Error fetching ratings:', error);
       }
@@ -37,18 +41,18 @@ const RatingsCount = () => {
 
   return (
     <div className=''>
-      <h3 className='text-lg md:text-2xl lg:text-3xl mt-4 text-center'>Ratings</h3>
-
-      <div className='grid grid-cols-3 gap-4 md:gap-6 mt-2 '>
+      <div className='grid grid-cols-3 gap-4 md:gap-6 mt-4 px-4 md:px-0 lg:px-0'>
         {counts.map((count, index) => (
           <div key={index}>
-            <span className='underline text-zinc-400'>{index + 1} Stjerne rating:</span> <br/> Antal af stjerner er <span className='text-red-600'>{count}</span>
+            <span className='underline text-zinc-400'>{index + 1} Stjerne rating:</span> <br/> Antal stjerner: <span className='text-red-600'>{count}</span>
   
           </div>
         ))}
       </div>
 
-      <div className='font-extrabold text-zinc-300 mt-1.5 text-center'><span className='text-red-500 font-bold'>Total Ratings:</span> {totalCount}</div>
+      <div className='font-extrabold text-zinc-300 mt-2 text-center'><span className='text-red-500 font-bold'>Total Ratings:</span> {totalCount}</div>
+      <div className='font-extrabold text-zinc-300 mt-0.5 text-center'><span className='text-red-500 font-bold'>Gennemsnit Ratings:</span> {average.toFixed(2)}</div>
+    
     </div>
   );
 };

@@ -23,7 +23,9 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
         selected === "booking" ? "bg-indigo-600" : "bg-green-700"
       }`}
     >
-      <h3 className="text-4xl font-bold mb-6 uppercase">Kontakt Os</h3>
+      <h3 className="text-4xl font-bold mb-6 uppercase">
+        {selected === "booking" ? "Book hos os" : "kontakt os"}
+      </h3>
 
       {/* Name input */}
       <div className="mb-6">
@@ -66,10 +68,10 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
             transition={BASE_TRANSITION}
             className="mb-6"
           >
-            <p className="text-2xl mb-2">by the name of...</p>
+            <p className="text-2xl mb-2">I hvems navn...</p>
             <input
               type="text"
-              placeholder="Your booking name..."
+              placeholder="Dit booking navn..."
               className={`${
                 selected === "booking" ? "bg-indigo-700" : "bg-green-700"
               } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
@@ -82,7 +84,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
       <div className="mb-6">
         <p className="text-2xl mb-2">Værsgo og spørg løs...</p>
         <textarea
-          placeholder="Whatever your heart desires :)"
+          placeholder="Har du ydre bemærkninger :)"
           className={`${
             selected === "booking" ? "bg-indigo-700" : "bg-green-600"
           } transition-colors duration-[750ms] min-h-[150px] resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}

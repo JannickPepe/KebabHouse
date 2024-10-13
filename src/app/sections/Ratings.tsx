@@ -13,7 +13,7 @@ import GlobalShowMore from '@/components/GlobalShowMore';
 const Ratings = () => {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
+    const isInView = useInView(ref, { once: true });
 
     const [ratings, setRatings] = useState<number[]>([]);
 
@@ -42,11 +42,12 @@ const Ratings = () => {
 
     return (
         <motion.section 
-        ref={ref}
-        initial={{ opacity: 1, y: 50 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100, x: isInView ? 0: 150 }}
-        transition={{ duration: 0.5 }}
-        className='py-10 lg:py-20'>
+            ref={ref}
+            initial={{ opacity: 1, y: 50 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 400 }}
+            transition={{ duration: 1 }}
+            className='py-10 lg:py-20'
+        >
             <h3 className='text-lg md:text-2xl lg:text-3xl text-center max-w-[540px] mx-auto text-black dark:text-white'>
                 Vi bestræber os altid efter at gøre vores bedste - din mening  <span className='underline'>betyder meget</span>
             </h3>
@@ -55,7 +56,7 @@ const Ratings = () => {
                 <Rating />
             </div>
 
-            <h4 className='text-center mt-6 text-green-600'>Vores nye ratings fra kunder</h4>
+            <h4 className='text-center mt-6 text-green-600'>De nyeste ratings fra vores kunder</h4>
             <div className='flex justify-center items-center mt-6'>
                 <ul className='grid grid-cols-3 md:grid-cols-6 gap-4 mx-auto'>
                     {ratings.map((rate, index) => (

@@ -4,7 +4,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GlobalButton } from "../../components/GlobalButton";
-
+import { SlideTabsExample } from "../../components/Tabs"
 
 const HeroLanding = () => {
     return (
@@ -21,6 +21,8 @@ const HeroLanding = () => {
                 <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-500 my-4 md:my-6 max-w-[450px]">
                     Velkommen til Kebab House, hvor vi har høj kvalitet af mad samt en varieret menukort <br/>
                 </p>
+
+                <SlideTabsExample />
 
                 <div className="flex justify-center md:justify-start mt-6 md:mt-0 text-zinc-800 dark:text-white">
                     <GlobalButton>Vores Menukort</GlobalButton>
