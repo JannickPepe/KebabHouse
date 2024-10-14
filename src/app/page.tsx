@@ -1,4 +1,4 @@
-import ShowUseMenu from "@/components/ShowUseMenu";
+//import ShowUseMenu from "@/components/ShowUseMenu";
 import FrokostTilbud  from "./sections/FrokostTilbud";
 import HeroLanding from "./sections/Hero";
 import Ratings from "./sections/Ratings";
@@ -19,7 +19,9 @@ export default function Home() {
 
       {/* KATEGORY MAD */}
       <section>
-        <ShowUseMenu />
+        {/*
+          <ShowUseMenu />
+         */}
       </section>
 
       {/* TOP 5 PIZZA */}
