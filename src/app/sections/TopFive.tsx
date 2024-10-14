@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { getEvents } from "../../utils/events";
+import { getEvents } from "../../utils/PizzaFetch";
 import { PizzaModel } from "../../models/pizzamodel";
 
 

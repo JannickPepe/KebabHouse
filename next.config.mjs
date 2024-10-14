@@ -13,6 +13,14 @@ const nextConfig = {
         NEXT_APPWRITE_COLLECTION_RATING: process.env.NEXT_APPWRITE_COLLECTION_RATING,
         NEXT_APPWRITE_COLLECTION_MENU_ID: process.env.NEXT_APPWRITE_COLLECTION_MENU_ID,
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "cloud.appwrite.io", 
+            },
+        ],
+    },
 };
 
 export default nextConfig;
