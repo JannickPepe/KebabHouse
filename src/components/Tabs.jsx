@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const HeroTabs = () => {
 
@@ -31,11 +32,21 @@ const SlideTabs = () => {
                 }}
                 className="relative flex w-fit rounded-full p-0.5 md:p-1 -ml-5"
             >
-                <Tab setPosition={setPosition}>Pizza</Tab>
-                <Tab setPosition={setPosition}>Durum</Tab>
-                <Tab setPosition={setPosition}>Pitabrød</Tab>
-                <Tab setPosition={setPosition}>Sandwhich</Tab>
-                <Tab setPosition={setPosition}>Menuer</Tab>
+                <Link href="#pizza">
+                    <Tab setPosition={setPosition}>Pizza</Tab>
+                </Link>
+                <Link href="#menu">
+                    <Tab setPosition={setPosition}>Durum</Tab>
+                </Link>
+                <Link href="#menu">
+                    <Tab setPosition={setPosition}>Pitabrød</Tab>
+                </Link>
+                <Link href="#menu">
+                    <Tab setPosition={setPosition}>Burger</Tab>
+                </Link>
+                <Link href="#discount">
+                    <Tab setPosition={setPosition}>Tilbud</Tab>
+                </Link>
 
                 <Cursor position={position} />
             </ul>
@@ -75,7 +86,7 @@ const Cursor = ({ position }) => {
             animate={{
                 ...position,
             }}
-            className="absolute -top-2 z-0 h-7 rounded-full bg-black md:h-12"
+            className="absolute -top-[3px] md:-top-2 z-0 h-7 rounded-full bg-black md:h-12"
         />
     );
 };

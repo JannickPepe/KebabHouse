@@ -13,37 +13,37 @@ export default function Home() {
     <div className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 
       {/* LANDING */}
-      <section>
+      <section id="landing">
         <HeroLanding />
       </section>
 
-      {/* KATEGORY MAD */}
-      <section>
+      {/* MENU */}
+      <section id="menu">
         <ShowUseMenu />
       </section>
 
       {/* TOP 5 PIZZA */}
-      <section>
+      <section id="pizza">
         <TopFive />
       </section>
 
       {/* FROKOST TILBUD */}
-      <section>
+      <section id="discount">
         <FrokostTilbud />
       </section>
 
       {/* KEBAB HOUSE STEMNING */}
-      <section>
+      <section id="stemning">
         <Stemning />
       </section>
 
       {/* RATING  */}
-      <section>
+      <section id="rating">
         <Ratings />
       </section>
 
       {/* KONTAKT */}
-      <section>
+      <section id="contact">
         <Contact />
       </section>
 

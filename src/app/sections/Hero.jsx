@@ -10,7 +10,15 @@ const HeroLanding = () => {
 
     return (
         <section className="w-full px-8 pb-12 pt-28 md:pt-40 lg:pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
-            <div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0}}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{
+                    duration: 1.0,
+                    ease: 'easeIn',
+                }}
+            >
                 <span className="block mb-2 text-xs uppercase md:ml-1 text-zinc-400 dark:text-green-500 font-bold">
                     Kvalitet mad hver dag
                 </span>
@@ -29,7 +37,7 @@ const HeroLanding = () => {
                     <GlobalButton>Vores Menukort</GlobalButton>
                 </div>
 
-            </div>
+            </motion.div>
             <div className="hidden md:block">
                 <ShuffleGrid />
             </div>
@@ -125,9 +133,14 @@ const ShuffleGrid = () => {
     };
 
     return (
-        <div className="grid grid-cols-3 grid-rows-3 h-[450px] gap-1">
+        <motion.div 
+        initial={{ opacity: 0, y:20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.5, ease: "easeIn" }}
+        className="grid grid-cols-3 grid-rows-3 h-[450px] gap-1">
             {squares.map((sq) => sq)}
-        </div>
+        </motion.div>
     );
 };
 

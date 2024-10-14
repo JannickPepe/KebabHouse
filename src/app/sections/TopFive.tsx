@@ -5,6 +5,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { getEvents } from "../../utils/PizzaFetch";
 import { PizzaModel } from "../../models/pizzamodel";
+import { twMerge } from "tailwind-merge";
 
 
 export const TopFive = () => {
@@ -21,14 +22,33 @@ export const TopFive = () => {
     return (
         <section className="py-10 md:py-24 lg:28">
             <div className=" text-center">
-                <p className="text-slate-600 dark:text-zinc-400 text-sm font-bold">Smag det bedste af det bedste</p>
+                <p className="block text-slate-600 dark:text-zinc-400 text-xs uppercase font-bold">Smag det bedste af det bedste</p>
                 <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">Vores <span className="text-green-600">Top 5</span> af vores bedste <span className="text-green-600">pizza&apos;er</span></h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 max-w-7xl mx-auto">
-                {pizzas.map((pizza) => {
+                {pizzas.map((pizza, testimonialIndex) => {
                     return (
-                        <div className="flex flex-col justify-center items-center" key={pizza.title} >
+                        <motion.div 
+                            key={testimonialIndex}
+                            initial={{
+                                opacity: 0,
+                                y: 24,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                            }}
+                            viewport={{
+                                once: true,
+                            }}
+                            transition={{
+                                delay: testimonialIndex * 0.5,
+                                ease: 'easeInOut',
+                                duration: 1,
+                            }}
+                            className={twMerge("flex flex-col justify-center items-center")}  
+                        >
                             <div className="text-lg flex items-center gap-1 text-black dark:text-zinc-400">
                                 <IoFastFoodOutline className="text-red-600 dark:text-green-600"/>
                                 {pizza.title}
@@ -45,7 +65,7 @@ export const TopFive = () => {
                                     {pizza.price}kr / {pizza.pricediscount}kr <span className="text-xs text-red-700 dark:text-zinc-400">(Frokost Tilbud)</span>
                                 </span>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>

@@ -3,14 +3,8 @@
 import { useEffect, useState } from 'react';
 import { databases } from '../../lib/appwrite'; // Make sure this path is correct
 import Image from 'next/image';
+import { MenuItem } from '@/models/menumodel';
 
-interface MenuItem {
-    title: string;
-    description: string;
-    price: number;
-    pricediscount: number;
-    image: string;
-}
 
 export default function ShowMenu() {
 
@@ -37,9 +31,9 @@ export default function ShowMenu() {
     const handleButtonClick = (collection: 'pizza' | 'burger' | 'pitabread') => {
         setActiveCollection(collection);
         const collectionIds: Record<string, string> = {
-        pizza: process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID,
-        burger: process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID,
-        pitabread: process.env.NEXT_APPWRITE_COLLECTION_PITABREAD_ID,
+            pizza: process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID,
+            burger: process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID,
+            pitabread: process.env.NEXT_APPWRITE_COLLECTION_PITABREAD_ID,
         };
 
         fetchCollection(collectionIds[collection]);
@@ -48,14 +42,14 @@ export default function ShowMenu() {
     return (
         <section className="py-10 md:py-24 lg:28">
             <div className=" text-center">
-                <p className="text-slate-600 dark:text-zinc-400 text-sm font-bold uppercase">Menu oversigt</p>
+                <p className="block text-slate-600 dark:text-zinc-400 text-xs font-bold uppercase">Menu oversigt</p>
                 <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">
                     Vores spændende <span className='text-green-600 font-bold underline'>friske</span> udvalg 
                 </h2>
             </div>
 
             {/* Button Group */}
-            <div className="my-6 flex justify-center gap-4">
+            <div className="my-6 md:my-8 flex justify-center gap-4">
                 <button
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('pizza')}
@@ -79,20 +73,20 @@ export default function ShowMenu() {
             </div>
 
             {/* Menu Items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-10 md:px-0">
                 {menuItems.length > 0 ? (
                     menuItems.map((item, index) => (
-                        <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md">
+                        <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md text-center">
                             <Image
                                 src={item.image}
                                 alt={item.title}
                                 width={400}
                                 height={200}
-                                className="object-cover w-full h-40 mb-4 rounded-md"
+                                className="object-cover w-3/4 md:w-full h-40 mb-4 rounded-md mx-auto md:mx-0"
                             />
-                            <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                            <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{item.title}</h3>
                             <p className="text-zinc-500 mb-2">{item.description}</p>
-                            <p className="text-zinc-400 font-bold mb-2">{item.price.toFixed(2)}kr</p>
+                            <p className="text-zinc-600 dark:text-zinc-400 font-bold mb-2">{item.price.toFixed(2)}kr</p>
 
                             {item.pricediscount > 0 && (
                                 <p className="text-red-600 font-bold">Tilbud: {item.pricediscount.toFixed(2)}kr</p>
