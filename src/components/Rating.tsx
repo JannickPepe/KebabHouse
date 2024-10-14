@@ -30,7 +30,7 @@ const Rating = () => {
                     <FaStar className='size-4 md:size-6 lg:size-8 hover:text-[#fbb060]' />
                 </span>
             ))}
-            {submittedRating !== null && <p>Submitted Rating: {submittedRating} stars</p>}
+            {submittedRating !== null && <p>Angivet Rating: {submittedRating} stars</p>}
         </div>
     );
 };

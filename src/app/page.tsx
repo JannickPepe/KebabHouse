@@ -1,3 +1,4 @@
+import ShowUseMenu from "@/components/ShowUseMenu";
 import FrokostTilbud  from "./sections/FrokostTilbud";
 import HeroLanding from "./sections/Hero";
 import Ratings from "./sections/Ratings";
@@ -14,6 +15,11 @@ export default function Home() {
       {/* LANDING */}
       <section>
         <HeroLanding />
+      </section>
+
+      {/* KATEGORY MAD */}
+      <section>
+        <ShowUseMenu />
       </section>
 
       {/* TOP 5 PIZZA */}

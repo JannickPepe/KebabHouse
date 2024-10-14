@@ -4,9 +4,10 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GlobalButton } from "../../components/GlobalButton";
-import { SlideTabsExample } from "../../components/Tabs"
+import { HeroTabs } from "../../components/Tabs";
 
 const HeroLanding = () => {
+
     return (
         <section className="w-full px-8 pb-12 pt-28 md:pt-40 lg:pb-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">
             <div>
@@ -22,11 +23,12 @@ const HeroLanding = () => {
                     Velkommen til Kebab House, hvor vi har høj kvalitet af mad samt en varieret menukort <br/>
                 </p>
 
-                <SlideTabsExample />
+                <HeroTabs />
 
                 <div className="flex justify-center md:justify-start mt-6 md:mt-0 text-zinc-800 dark:text-white">
                     <GlobalButton>Vores Menukort</GlobalButton>
                 </div>
+
             </div>
             <div className="hidden md:block">
                 <ShuffleGrid />

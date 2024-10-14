@@ -33,7 +33,9 @@ const Copy = () => {
 
     return (
         <div className="flex h-fit w-full flex-col justify-center md:sticky md:top-0 md:h-[100vh]">
-            <p className="uppercase text-xs font-bold ml-1 border-2 border-green-600 rounded-xl mx-auto px-4 py-1 mt-4 md:mt-0">Om os</p>
+            <p className="uppercase text-xs font-bold ml-1 border-2 border-green-600 rounded-xl mx-auto px-4 py-1 mt-4 mb-1 md:mb-0 md:mt-0">
+                Om os
+            </p>
             <h2 className="mb-4 mt-1 text-xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase">
                 Cafe og Kebab House
             </h2>

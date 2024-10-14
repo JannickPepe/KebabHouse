@@ -48,8 +48,8 @@ const Ratings = () => {
             transition={{ duration: 1 }}
             className='py-10 lg:py-20'
         >
-            <h3 className='text-lg md:text-2xl lg:text-3xl text-center max-w-[540px] mx-auto text-black dark:text-white'>
-                Vi bestræber os altid efter at gøre vores bedste - din mening  <span className='underline'>betyder meget</span>
+            <h3 className='text-lg md:text-2xl lg:text-3xl text-center px-6 md:px-0 max-w-[540px] mx-auto text-black dark:text-white'>
+                Vi bestræber os altid efter at gøre vores bedste - Din mening  <span className='underline'>betyder meget</span>
             </h3>
 
             <div className='flex justify-center mt-6'>

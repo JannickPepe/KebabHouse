@@ -34,7 +34,7 @@ export const TopFive = () => {
                                 {pizza.title}
                             </div>
 
-                            <motion.img className="h-44 w-44 rounded-md my-2 shadow-sm shadow-red-600 hover:scale-105 transition" src={pizza.pizzaimg} alt="hello"/>
+                            <motion.img className="h-44 w-44 rounded-md my-2 shadow-sm shadow-red-600 hover:scale-105 transition" src={pizza.image} alt="hello"/>
                             
                             <div className="max-w-[220px] text-center my-1 md:my-2 text-black dark:text-white">
                                 {pizza.description}

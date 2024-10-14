@@ -3,10 +3,10 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export const SlideTabsExample = () => {
+export const HeroTabs = () => {
 
     return (
-        <div className="mb-6">
+        <div className="mb-6 md:mb-8">
             <SlideTabs />
         </div>
     );
@@ -21,27 +21,29 @@ const SlideTabs = () => {
     });
 
     return (
-        <ul
-            onMouseLeave={() => {
-                setPosition((pv) => ({
-                ...pv,
-                opacity: 0,
-                }));
-            }}
-            className="relative flex w-fit rounded-full p-1 -ml-5"
-        >
-            <Tab setPosition={setPosition}>Pitabrød</Tab>
-            <Tab setPosition={setPosition}>Durum</Tab>
-            <Tab setPosition={setPosition}>Pizza</Tab>
-            <Tab setPosition={setPosition}>Sandwhich</Tab>
-            <Tab setPosition={setPosition}>Menuer</Tab>
+        <div>
+            <ul
+                onMouseLeave={() => {
+                    setPosition((pv) => ({
+                    ...pv,
+                    opacity: 0,
+                    }));
+                }}
+                className="relative flex w-fit rounded-full p-0.5 md:p-1 -ml-5"
+            >
+                <Tab setPosition={setPosition}>Pizza</Tab>
+                <Tab setPosition={setPosition}>Durum</Tab>
+                <Tab setPosition={setPosition}>Pitabrød</Tab>
+                <Tab setPosition={setPosition}>Sandwhich</Tab>
+                <Tab setPosition={setPosition}>Menuer</Tab>
 
-            <Cursor position={position} />
-        </ul>
+                <Cursor position={position} />
+            </ul>
+        </div>
     );
 };
 
-const Tab = ({ children, setPosition }) => {
+const Tab = ({ children, setPosition, }) => {
 
     const ref = useRef(null);
 
@@ -59,7 +61,7 @@ const Tab = ({ children, setPosition }) => {
                 opacity: 1,
                 });
             }}
-            className="relative z-10 block cursor-pointer px-3 text-xs uppercase text-white mix-blend-difference md:px-5 md:text-sm hover:text-green-400"
+            className="relative z-10 block cursor-pointer px-2 md:px-5 text-xs md:text-sm uppercase text-white mix-blend-difference hover:text-green-400"
         >
             {children}
         </li>
