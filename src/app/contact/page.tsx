@@ -1,16 +1,19 @@
 "use client";
 
+import FAQ from "@/components/FAQ";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 const Contact = () => {
   const [selected, setSelected] = useState("individual");
   return (
-    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0">
+    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-300 dark:bg-slate-900">
       <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
         <Form selected={selected} setSelected={setSelected} />
         <Images selected={selected} />
       </div>
+
+      <FAQ />
     </section>
   );
 };

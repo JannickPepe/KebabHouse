@@ -6,6 +6,7 @@ import { aboutFour, aboutOne, aboutThree, aboutTwo } from "../../utils/index";
 import Image from "next/image";
 import { GlobalButton } from "@/components/GlobalButton";
 import GlobalReadMore from "@/components/GlobalReadMore";
+import Link from "next/link";
 
 
 const About = () => {
@@ -48,7 +49,11 @@ const Copy = () => {
             </a>
 
             <div className="flex mt-8">
-                <GlobalButton>Se Vores Menukort</GlobalButton>
+                <Link href={'/menu'}>
+                    <GlobalButton>
+                        Menukort
+                    </GlobalButton>
+                </Link>
             </div>
         </div>
     );

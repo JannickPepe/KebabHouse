@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GlobalButton } from "../../components/GlobalButton";
 import { HeroTabs } from "../../components/Tabs";
+import Link from "next/link";
 
 const HeroLanding = () => {
 
@@ -34,7 +35,11 @@ const HeroLanding = () => {
                 <HeroTabs />
 
                 <div className="flex justify-center md:justify-start mt-6 md:mt-0 text-zinc-800 dark:text-white">
-                    <GlobalButton>Vores Menukort</GlobalButton>
+                    <Link href={'/menu'}>
+                        <GlobalButton>
+                            Menukort
+                        </GlobalButton>
+                    </Link>
                 </div>
 
             </motion.div>

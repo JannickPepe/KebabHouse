@@ -7,6 +7,7 @@ import { GlobalButton } from "../../components/GlobalButton";
 import Image from "next/image";
 import burgerIcon from "../../assets/icons/burger.png";
 import pitaIcon from "../../assets/icons/pita.png";
+import Link from "next/link";
 
 
 export const Stemning = () => {
@@ -71,7 +72,11 @@ export const Stemning = () => {
                 </div>
                 
                 <div className="flex justify-center mt-6 md:mt-14 text-black dark:text-zinc-400">
-                    <GlobalButton>Vores Menu</GlobalButton>
+                    <Link href={'/menu'}>
+                        <GlobalButton>
+                            Menukort
+                        </GlobalButton>
+                    </Link>
                 </div>
 
                 <div className="absolute bottom-0 left-1/2 translate-y-6 -translate-x-36 hidden md:block">

@@ -9,6 +9,7 @@ import { CiPizza } from "react-icons/ci";
 import Image from "next/image";
 import testLogo from "../assets/images/testlogo.jpeg";
 import ToggleWrapper from "./NewThemeToggle";
+import Link from "next/link";
 
 const Navbar = () => {
 
@@ -115,7 +116,11 @@ const GlassLink = ({ text }) => {
 
 const Buttons = ({ setMenuOpen }) => (
     <div className="flex items-center gap-4">
-        <GlobalButton className="ml-1.5">Menukort</GlobalButton>
+        <Link href={'/menu'}>
+            <GlobalButton className="ml-1.5">
+                Menukort
+            </GlobalButton>
+        </Link>
         <div className="hidden md:block">
             <ToggleWrapper />
         </div>
