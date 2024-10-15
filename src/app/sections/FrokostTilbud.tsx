@@ -8,7 +8,7 @@ import tilbudTwo from '../../assets/icons/pita.png';
 import tilbudThree from '../../assets/icons/pizza.png';
 import tilbudfour from '../../assets/icons/kebabbox.png';
 import Image, { StaticImageData } from "next/image";
-import { BiFoodMenu } from "react-icons/bi";
+import menuCardIcon from "@/assets/icons/menucard.png"
 
 
 const FrokostTilbud = () => {
@@ -78,8 +78,8 @@ const Feature = ({ position, index, title, description, image } : { position: nu
             <p className="text-lg font-bold">
                 Med Friske og nye råvarer og grønt 
             </p>
-            <p className="flex items-center gap-1 text-sm font-medium">
-                <BiFoodMenu className="size-4" />
+            <p className="flex items-start md:items-center gap-1 text-sm font-medium">
+                <Image src={menuCardIcon} alt="kebab house icon" className="size-4" />
                 <span >{description}</span>
             </p>
         </motion.div>

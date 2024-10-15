@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { databases } from '../../lib/appwrite'; // Make sure this path is correct
 import Image from 'next/image';
 import { MenuItem } from '@/models/menumodel';
+import burgerIcon from "@/assets/icons/burger.png";
+import pitaIcon from "@/assets/icons/pita.png";
+import pizzaIcon from "@/assets/icons/pizza.png";
 
 
 export default function ShowMenu() {
@@ -54,21 +57,21 @@ export default function ShowMenu() {
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('pizza')}
                 >
-                    Pizza
+                    <Image src={pizzaIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
                 </button>
 
                 <button
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'burger' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('burger')}
                 >
-                    Burger
+                    <Image src={burgerIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
                 </button>
 
                 <button
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pitabread' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('pitabread')}
                 >
-                    Pitabrød
+                    <Image src={pitaIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
                 </button>
             </div>
 

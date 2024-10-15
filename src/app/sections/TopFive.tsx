@@ -27,10 +27,10 @@ export const TopFive = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 max-w-7xl mx-auto">
-                {pizzas.map((pizza, testimonialIndex) => {
+                {pizzas.map((pizza, topFiveIndex) => {
                     return (
                         <motion.div 
-                            key={testimonialIndex}
+                            key={topFiveIndex}
                             initial={{
                                 opacity: 0,
                                 y: 24,
@@ -43,7 +43,7 @@ export const TopFive = () => {
                                 once: true,
                             }}
                             transition={{
-                                delay: testimonialIndex * 0.5,
+                                delay: topFiveIndex * 0.5,
                                 ease: 'easeInOut',
                                 duration: 1,
                             }}

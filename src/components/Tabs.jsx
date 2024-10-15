@@ -33,19 +33,79 @@ const SlideTabs = () => {
                 className="relative flex w-fit rounded-full p-0.5 md:p-1 -ml-5"
             >
                 <Link href="#pizza">
-                    <Tab setPosition={setPosition}>Pizza</Tab>
+                    <Tab setPosition={setPosition}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} 
+                            whileInView={{ opacity: 1, y: 0}}
+                            viewport={{ once: true, amount: 0.5}}
+                            transition={{
+                                duration: 1,
+                                ease: 'easeIn',
+                            }}
+                        >
+                            Pizza
+                        </motion.div>
+                    </Tab>
                 </Link>
                 <Link href="#menu">
-                    <Tab setPosition={setPosition}>Durum</Tab>
+                    <Tab setPosition={setPosition}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} 
+                            whileInView={{ opacity: 1, y: 0}}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{
+                                duration: 1.2,
+                                ease: 'easeIn',
+                            }}
+                        >
+                            Durum
+                        </motion.div>
+                    </Tab>
                 </Link>
                 <Link href="#menu">
-                    <Tab setPosition={setPosition}>Pitabrød</Tab>
+                    <Tab setPosition={setPosition}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} 
+                            whileInView={{ opacity: 1, y: 0}}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{
+                                duration: 1.4,
+                                ease: 'easeIn',
+                            }}
+                        >
+                            Pitabrød
+                        </motion.div>
+                    </Tab>
                 </Link>
                 <Link href="#menu">
-                    <Tab setPosition={setPosition}>Burger</Tab>
+                    <Tab setPosition={setPosition}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} 
+                            whileInView={{ opacity: 1, y: 0}}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{
+                                duration: 1.6,
+                                ease: 'easeIn',
+                            }}
+                        >
+                            Burger
+                        </motion.div>
+                    </Tab>
                 </Link>
                 <Link href="#discount">
-                    <Tab setPosition={setPosition}>Tilbud</Tab>
+                    <Tab setPosition={setPosition}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }} 
+                            whileInView={{ opacity: 1, y: 0}}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{
+                                duration: 1.8,
+                                ease: 'easeIn',
+                            }}
+                        >
+                            Tilbud
+                        </motion.div>
+                    </Tab>
                 </Link>
 
                 <Cursor position={position} />
@@ -59,23 +119,22 @@ const Tab = ({ children, setPosition, }) => {
     const ref = useRef(null);
 
     return (
-        <li
+        <motion.li
             ref={ref}
             onMouseEnter={() => {
                 if (!ref?.current) return;
 
                 const { width } = ref.current.getBoundingClientRect();
-
                 setPosition({
                 left: ref.current.offsetLeft,
                 width,
                 opacity: 1,
                 });
             }}
-            className="relative z-10 block cursor-pointer px-2 md:px-5 text-xs md:text-sm uppercase text-white mix-blend-difference hover:text-green-400"
+            className="relative z-10 block cursor-pointer px-2 md:px-5 text-xs md:text-sm uppercase text-slate-800 font-bold dark:text-white mix-blend-difference hover:text-green-400 dark:hover:text-green-400"
         >
             {children}
-        </li>
+        </motion.li>
     );
 };
 
