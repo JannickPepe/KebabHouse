@@ -30,6 +30,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-gradient {
+  background: linear-gradient(90deg, #22c55e, #059669, #15803d, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;

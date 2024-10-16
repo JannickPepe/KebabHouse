@@ -57,21 +57,21 @@ export default function ShowMenu() {
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('pizza')}
                 >
-                    <Image src={pizzaIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
+                    <Image src={pizzaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
                 </button>
 
                 <button
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'burger' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('burger')}
                 >
-                    <Image src={burgerIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
+                    <Image src={burgerIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
                 </button>
 
                 <button
                     className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pitabread' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
                     onClick={() => handleButtonClick('pitabread')}
                 >
-                    <Image src={pitaIcon} alt='' className='size-8 hover:rotate-12 transition duration-300' />
+                    <Image src={pitaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
                 </button>
             </div>
 

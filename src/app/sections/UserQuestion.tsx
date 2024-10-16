@@ -44,7 +44,9 @@ const Contact = () => {
             <div className="font-[sans-serif] max-w-4xl mx-auto relative  rounded-lg py-6">
                 <div className="grid lg:grid-cols-1 items-center">
                     <div className="lg:col-span-2 md:max-w-lg lg:max-w-full md:mx-auto lg:mx-0 md:border border-green-700 opacity-90 rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">
-                        <h3 className="text-3xl text-center font-bold uppercase text-black dark:text-zinc-400">Kontakt os</h3>
+                        <h3 className="text-gradient text-3xl text-center font-bold uppercase text-black dark:text-zinc-400">
+                            Kontakt os
+                        </h3>
                         <p className='text-center text-zinc-500 py-4 max-w-[400px] mx-auto'>
                             Vi vil hurtigst muligt besvare din henvendelse <br/> De bedste hilsner <span className='underline'>Cafe & Kebab House</span>
                         </p>

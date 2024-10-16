@@ -15,7 +15,7 @@ const Footer = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div>
-                        <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
+                        <h3 className="text-gradient text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Kontakt os
                         </h3>
                         <p className="flex justify-center items-top mt-2 md:mt-4 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
@@ -24,7 +24,7 @@ const Footer = () => {
                         </p>
                         <hr className="max-w-[220px] mx-auto my-2 md:my-3"/>
                     
-                        <p className="flex justify-center items-top gap-3 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
+                        <p className="flex justify-center items-top gap-3 pb-2 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
                             <BsTelephoneInbound className="size-6 mt-0.5 text-zinc-400" />
                             +45 43 52 72 71
                         </p>
@@ -35,8 +35,8 @@ const Footer = () => {
                     </div>
 
                     <div className="text-lg md:text-2xl lg:text-3xl font-semibold text-zinc-400 mt-6 md:mt-0 lg:mt-0">
-                        <div className="flex justify-center items-center gap-4 uppercase">
-                            Kebab House & Cafe
+                        <div className="text-gradient flex justify-center items-center gap-4 uppercase">
+                            Cafe & Kebab House  
                             <Image src={footerImg} className="h-8 w-8 lg:h-12 lg:w-12 hidden lg:block" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
                         </div>
                         <div className="text-base md:text-base lg:text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
@@ -45,12 +45,12 @@ const Footer = () => {
                             <p><span className="underline">Lørdage til søndage</span> Fra 11:00 - 22:00</p>
                         </div>
 
-                        <button className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-0 md:mt-8 px-3 py-2 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:text-zinc-300 transition group">
+                        <button className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-4 md:mt-10 px-3 py-2 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:text-zinc-300 transition group">
                             Google Maps <FaArrowRightLong className="size-5 mt-1 group-hover:text-white group-hover:ml-1 transition-all"/>
                         </button>
                     </div>
                     <div>
-                        <h3 className="text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
+                        <h3 className="text-gradient text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Links
                         </h3>
                         <div className="mt-4 justify-center flex text-sm md:text-base lg:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
