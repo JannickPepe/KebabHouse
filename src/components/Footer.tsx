@@ -2,10 +2,10 @@
 import Image from "next/image";
 import footerImg from "../assets/icons/kebab.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMailOutline } from "react-icons/io5";
 import { RiMapPinLine } from "react-icons/ri";
 import { BsTelephoneInbound } from "react-icons/bs";
+import FooterModal from "./FooterModal";
 
 
 const Footer = () => {
@@ -45,9 +45,7 @@ const Footer = () => {
                             <p><span className="underline">Lørdage til søndage</span> Fra 11:00 - 22:00</p>
                         </div>
 
-                        <button className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-4 md:mt-10 px-3 py-2 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:text-zinc-300 transition group">
-                            Google Maps <FaArrowRightLong className="size-5 mt-1 group-hover:text-white group-hover:ml-1 transition-all"/>
-                        </button>
+                        <FooterModal />
                     </div>
                     <div>
                         <h3 className="text-gradient text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
@@ -72,7 +70,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <span className="block text-sm text-center text-zinc-900 font-extrabold mt-4 md:mt-10">
+                <span className="block text-sm text-center text-zinc-500 font-bold mt-4 md:mt-10">
                     © 2024 KebabHouse. All Rights Reserved.
                 </span>
 

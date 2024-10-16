@@ -162,8 +162,7 @@ const Images = ({ selected } : { selected: string; }) => {
         className="absolute inset-0 bg-slate-200"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)",
-          backgroundSize: "cover",
+            "url(https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670e6d07000ebd0cbd34/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin)",
           backgroundPosition: "center",
         }}
       />
@@ -176,8 +175,7 @@ const Images = ({ selected } : { selected: string; }) => {
         className="absolute inset-0 bg-slate-200"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80)",
-          backgroundSize: "cover",
+            "url(https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670e6cff000c2e445171/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin)",
           backgroundPosition: "center",
         }}
       />

@@ -31,7 +31,9 @@ const FrokostTilbud = () => {
             <div className="mx-auto max-w-6xl">
                 <div className="mb-8 flex justify-between gap-4">
                     <div className="text-lg md:text-4xl font-bold leading-[1.2] max-w-[740px] space-y-2 text-zinc-700 dark:text-white">
-                        <h3><span className="underline">Frokosttilbud Gælder</span> alle ugens dage fra kl. 11.00 - 15.00. </h3>
+                        <h3><span className="underline">
+                            Frokosttilbud Gælder</span> alle ugens dage fra kl. <span className="text-red-600">11.00 - 15.00</span>
+                        </h3>
                         <h3><span className="underline">Gælder Ikke</span> ved udbringning!</h3>
                     </div>
                     <div className="flex gap-2">
