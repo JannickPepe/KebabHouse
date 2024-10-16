@@ -25,7 +25,7 @@ const HeroLanding = () => {
                 </span>
 
                 <h3 className="text-4xl md:text-6xl lg:text-7xl font-black max-w-2xl text-black dark:text-white">
-                    Kebab House - Mad med et smil
+                    Kebab House - <span className="text-green-600">Mad</span> med et smil
                 </h3>
 
                 <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-500 my-4 md:my-6 max-w-[450px]">

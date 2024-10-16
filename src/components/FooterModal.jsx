@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { TbArrowBack } from "react-icons/tb";
 
 
 const FooterModal = () => {
@@ -46,9 +47,9 @@ const SpringModal = ({ isOpen, setIsOpen } ) => {
                     <div className="flex gap-2">
                         <button
                         onClick={() => setIsOpen(false)}
-                        className="text-base text-white hover:text-black font-semibold w-full pt-2"
+                        className="text-base text-white hover:text-black font-semibold w-full pt-2 flex justify-center items-center gap-1 group"
                         >
-                            Tilbage
+                            Tilbage <TbArrowBack className="size-6" />
                         </button>
                     
                     </div>

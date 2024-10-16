@@ -7,13 +7,15 @@ import { MenuItem } from '@/models/menumodel';
 import burgerIcon from "@/assets/icons/burger.png";
 import pitaIcon from "@/assets/icons/pita.png";
 import pizzaIcon from "@/assets/icons/pizza.png";
+import steakIcon from "@/assets/icons/steak.png";
+import durumIcon from "@/assets/icons/shawarma.png";
 import Tooltip from '@/components/ToolTip';
 
 
 export default function ShowMenu() {
 
     const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
-    const [activeCollection, setActiveCollection] = useState<'pizza' | 'burger' | 'pitabread'>('pizza');
+    const [activeCollection, setActiveCollection] = useState<'pizza' | 'burger' | 'pitabread' | 'durum' | 'wholemenus'>('pizza');
 
     // Fetch collection data based on the activeCollection
     const fetchCollection = async (collectionId: string) => {
@@ -32,12 +34,14 @@ export default function ShowMenu() {
     }, []);
 
     // Handle button click to fetch the corresponding collection
-    const handleButtonClick = (collection: 'pizza' | 'burger' | 'pitabread') => {
+    const handleButtonClick = (collection: 'pizza' | 'burger' | 'pitabread' | 'durum' | 'wholemenus') => {
         setActiveCollection(collection);
         const collectionIds: Record<string, string> = {
             pizza: process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID,
             burger: process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID,
             pitabread: process.env.NEXT_APPWRITE_COLLECTION_PITABREAD_ID,
+            durum: process.env.NEXT_APPWRITE_COLLECTION_DURUM_ID,
+            wholemenus: process.env.NEXT_APPWRITE_COLLECTION_WHOLEMENU_ID,
         };
 
         fetchCollection(collectionIds[collection]);
@@ -53,7 +57,7 @@ export default function ShowMenu() {
             </div>
 
             {/* Button Group */}
-            <div className="my-6 md:my-8 flex justify-center gap-4">
+            <div className="my-6 md:my-8 flex justify-center gap-2 md:gap-4">
                 <Tooltip text="Pizza">
                     <button
                         className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
@@ -78,6 +82,24 @@ export default function ShowMenu() {
                         onClick={() => handleButtonClick('pitabread')}
                     >
                         <Image src={pitaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
+                    </button>
+                </Tooltip>
+
+                <Tooltip text="Durum">
+                    <button
+                        className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'durum' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
+                        onClick={() => handleButtonClick('durum')}
+                    >
+                        <Image src={durumIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
+                    </button>
+                </Tooltip>
+
+                <Tooltip text="Hele Menuer">
+                    <button
+                        className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'wholemenus' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
+                        onClick={() => handleButtonClick('wholemenus')}
+                    >
+                        <Image src={steakIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
                     </button>
                 </Tooltip>
             </div>
