@@ -7,6 +7,7 @@ import { MenuItem } from '@/models/menumodel';
 import burgerIcon from "@/assets/icons/burger.png";
 import pitaIcon from "@/assets/icons/pita.png";
 import pizzaIcon from "@/assets/icons/pizza.png";
+import Tooltip from '@/components/ToolTip';
 
 
 export default function ShowMenu() {
@@ -53,26 +54,32 @@ export default function ShowMenu() {
 
             {/* Button Group */}
             <div className="my-6 md:my-8 flex justify-center gap-4">
-                <button
-                    className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
-                    onClick={() => handleButtonClick('pizza')}
-                >
-                    <Image src={pizzaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
-                </button>
+                <Tooltip text="Pizza">
+                    <button
+                        className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pizza' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
+                        onClick={() => handleButtonClick('pizza')}
+                    >
+                        <Image src={pizzaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
+                    </button>
+                </Tooltip>
 
-                <button
-                    className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'burger' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
-                    onClick={() => handleButtonClick('burger')}
-                >
-                    <Image src={burgerIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
-                </button>
+                <Tooltip text="Burger">
+                    <button
+                        className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'burger' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
+                        onClick={() => handleButtonClick('burger')}
+                    >
+                        <Image src={burgerIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
+                    </button>
+                </Tooltip>
 
-                <button
-                    className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pitabread' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
-                    onClick={() => handleButtonClick('pitabread')}
-                >
-                    <Image src={pitaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
-                </button>
+                <Tooltip text="Pitabrød">
+                    <button
+                        className={`px-4 py-2 rounded-lg uppercase ${activeCollection === 'pitabread' ? 'bg-green-700 text-white' : 'bg-zinc-500'}`}
+                        onClick={() => handleButtonClick('pitabread')}
+                    >
+                        <Image src={pitaIcon} alt='' className='size-5 md:size-8 hover:rotate-12 transition duration-300' />
+                    </button>
+                </Tooltip>
             </div>
 
             {/* Menu Items */}
