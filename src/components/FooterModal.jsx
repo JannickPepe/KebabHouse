@@ -21,7 +21,7 @@ const FooterModal = () => {
     );
 };
 
-const SpringModal = ({ isOpen, setIsOpen } : { isopen: any; setIsOpen: any; } ) => {
+const SpringModal = ({ isOpen, setIsOpen } ) => {
     return (
         <AnimatePresence>
             {isOpen && (
