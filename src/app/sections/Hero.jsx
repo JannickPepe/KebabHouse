@@ -20,16 +20,16 @@ const HeroLanding = () => {
                     ease: 'easeIn',
                 }}
             >
-                <span className="block mb-2 text-xs uppercase md:ml-1 text-zinc-400 dark:text-green-500 font-bold">
+                <span className="block mb-2 text-xs uppercase md:ml-1 text-zinc-500 dark:text-green-500 font-bold">
                     Kvalitet mad hver dag
                 </span>
 
-                <h3 className="text-4xl md:text-6xl lg:text-7xl font-black max-w-2xl text-black dark:text-white">
-                    Kebab House - <span className="text-green-600">Mad</span> med et smil
+                <h3 className="text-4xl w-full md:text-6xl lg:text-7xl font-black max-w-2xl text-black dark:text-white">
+                    <span className="text-green-600">Cafe</span> & Kebab House <br/> <span className="text-green-600">Mad</span> med et <span className="text-green-600">smil</span>
                 </h3>
 
                 <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-500 my-4 md:my-6 max-w-[450px]">
-                    Velkommen til Kebab House, hvor vi har høj kvalitet af mad samt en varieret menukort <br/>
+                    Velkommen til Cafe & Kebab House, hvor vi har høj kvalitet af mad samt en varieret menukort <br/>
                 </p>
 
                 <HeroTabs />
@@ -43,6 +43,7 @@ const HeroLanding = () => {
                 </div>
 
             </motion.div>
+
             <div className="hidden md:block">
                 <ShuffleGrid />
             </div>
@@ -82,26 +83,6 @@ const squareData = [
     {
         id: 4,
         src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/6705183c0017aebd50f6/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
-    },
-    {
-        id: 5,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670510500021f942984b/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
-    },
-    {
-        id: 6,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/67051047000d1b704e63/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
-    },
-    {
-        id: 7,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/6705103d001d5c151512/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
-    },
-    {
-        id: 8,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670510330019a7291226/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
-    },
-    {
-        id: 9,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/6705102600226a21f7ea/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
     },
 ];
 
@@ -143,7 +124,7 @@ const ShuffleGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, ease: "easeIn" }}
-            className="grid grid-cols-3 grid-rows-3 h-[450px] gap-1"
+            className="grid grid-cols-2 grid-rows-2 h-[450px] gap-2"
         >
             {squares.map((sq) => sq)}
         </motion.div>

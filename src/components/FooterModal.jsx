@@ -13,9 +13,9 @@ const FooterModal = () => {
         <div className="">
             <button
                 onClick={() => setIsOpen(true)}
-                className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-4 md:mt-10 px-3 py-2.5 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg text-zinc-200 hover:text-zinc-800 transition group"
+                className="flex mx-auto gap-2 items-center text-lg text-center mt-6 mb-8 md:mb-4 md:mt-10 px-3 text-black dark:text-zinc-300 py-2.5 tracking-wider bg-gradient-to-l from-green-600/60 to-green-600/80 rounded-lg hover:dark:text-zinc-800 transition group"
             >
-                Google Maps <FaArrowRightLong className="size-5 mt-1 group-hover:text-zinc-800 group-hover:ml-1 transition-all"/>
+                Google Maps <FaArrowRightLong className="size-5 mt-1 text-black dark:text-zinc-300 group-hover:text-zinc-800 group-hover:ml-1 transition-all"/>
             </button>
             <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>

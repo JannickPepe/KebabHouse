@@ -7,7 +7,7 @@ import { useState } from "react";
 const Contact = () => {
   const [selected, setSelected] = useState("individual");
   return (
-    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-300 dark:bg-slate-900">
+    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
       <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
         <Form selected={selected} setSelected={setSelected} />
         <Images selected={selected} />
@@ -23,7 +23,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
     <form
       onSubmit={(e) => e.preventDefault()}
       className={`p-8 w-full text-white transition-colors duration-[750ms] ${
-        selected === "booking" ? "bg-indigo-600" : "bg-green-700"
+        selected === "booking" ? "bg-red-700/80" : "bg-green-700"
       }`}
     >
       <h3 className="text-4xl font-bold mb-6 uppercase">
@@ -37,7 +37,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
           type="text"
           placeholder="Mit navn..."
           className={`${
-            selected === "booking" ? "bg-indigo-700" : "bg-green-600"
+            selected === "booking" ? "bg-slate-700" : "bg-green-600"
           } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -76,7 +76,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
               type="text"
               placeholder="Dit booking navn..."
               className={`${
-                selected === "booking" ? "bg-indigo-700" : "bg-green-700"
+                selected === "booking" ? "bg-slate-700" : "bg-green-700"
               } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
             />
           </motion.div>
@@ -89,7 +89,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
         <textarea
           placeholder="Har du ydre bemærkninger :)"
           className={`${
-            selected === "booking" ? "bg-indigo-700" : "bg-green-600"
+            selected === "booking" ? "bg-slate-700" : "bg-green-600"
           } transition-colors duration-[750ms] min-h-[150px] resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -105,7 +105,7 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
         type="submit"
         className={`${
           selected === "booking"
-            ? "bg-white text-indigo-600"
+            ? "bg-white text-red-600"
             : "bg-white text-green-600"
         } transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold`}
       >
@@ -136,7 +136,7 @@ const FormSelect = ({ selected, setSelected } : {selected: string; setSelected: 
       </button>
       <button
         className={`${
-          selected === "booking" ? "text-indigo-600" : "text-white"
+          selected === "booking" ? "text-red-600" : "text-white"
         } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
         onClick={() => setSelected("booking")}
       >

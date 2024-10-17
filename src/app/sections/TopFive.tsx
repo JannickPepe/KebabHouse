@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { IoFastFoodOutline } from "react-icons/io5";
+import { FaStar } from 'react-icons/fa6';
 import { motion } from "framer-motion";
 import { getEvents } from "../../utils/PizzaFetch";
 import { PizzaModel } from "../../models/pizzamodel";
@@ -49,12 +49,10 @@ export const TopFive = () => {
                             }}
                             className={twMerge("flex flex-col justify-center items-center")}  
                         >
-                            <div className="text-lg flex items-center gap-1 text-black dark:text-zinc-400">
-                                <IoFastFoodOutline className="text-red-600 dark:text-green-600"/>
+                            <div className="text-lg md:text-xl flex items-center gap-1 text-black dark:text-zinc-400">
+                                <FaStar className="text-orange-400 dark:text-green-600"/>
                                 {pizza.title}
                             </div>
-
-                            <motion.img className="h-44 w-44 rounded-md my-2 shadow-sm shadow-red-600 hover:scale-105 transition" src={pizza.image} alt="hello"/>
                             
                             <div className="max-w-[220px] text-center my-1 md:my-2 text-black dark:text-white">
                                 {pizza.description}

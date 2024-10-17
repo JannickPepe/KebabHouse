@@ -5,13 +5,13 @@ import menuRight from "@/assets/images/Menu-right.png";
 export default function Menu() {
 
     return (
-      <section className="pt-28 md:pt-40 max-w-7xl mx-auto">
+      <section className="pt-28 md:pt-40  mx-auto bg-zinc-200 dark:bg-slate-900">
         <div className="flex justify-center items-center ">
           <div className="text-center">
-            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold mb-4">
+            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold my-4 text-zinc-800 dark:text-zinc-300">
               Cafe & Kebab House <span className="text-green-600">Menukort</span>
             </h1>
-            <p className="px-8 md:px-0">Hos <span className="text-green-500">Cafe & Kebab House</span> har vi altid for <span className="text-green-500">friske vare</span> og høj hygiejne</p>
+            <p className="px-8 md:px-0 text-zinc-800 dark:text-zinc-300 font-medium tracking-wide">Hos <span className="text-green-500">Cafe & Kebab House</span> har vi altid for <span className="text-green-500">friske vare</span> og høj hygiejne</p>
           </div>
         </div>
   

@@ -109,14 +109,7 @@ export default function ShowMenu() {
                 {menuItems.length > 0 ? (
                     menuItems.map((item, index) => (
                         <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md text-center">
-                            <Image
-                                src={item.image}
-                                alt={item.title}
-                                width={400}
-                                height={200}
-                                className="object-cover w-3/4 md:w-full h-40 mb-4 rounded-md mx-auto md:mx-0"
-                            />
-                            <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{item.title}</h3>
+                            <h3 className="text-xl font-bold mb-2 text-zinc-700 dark:text-white">{item.title}</h3>
                             <p className="text-zinc-500 mb-2">{item.description}</p>
                             <p className="text-zinc-600 dark:text-zinc-400 font-bold mb-2">{item.price.toFixed(2)}kr</p>
 

@@ -3,6 +3,6 @@ export interface PitabreadModel {
     title: string;
     description: string;
     price: number;
-    image: string;
+    image?: string;
     pricediscount: number;
 }

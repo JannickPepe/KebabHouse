@@ -10,7 +10,7 @@ import FooterModal from "./FooterModal";
 
 const Footer = () => {
     return (
-        <footer className="relative z-0 overflow-x-clip pt-2 md:pt-8 lg:pt-24 pb-6 text-center">
+        <footer className="relative z-0 overflow-x-clip pt-2 md:pt-8 lg:pt-24 pb-6 text-center bg-zinc-200 dark:bg-zinc-900">
             <div className='absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10'></div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -22,7 +22,7 @@ const Footer = () => {
                             <RiMapPinLine className="size-6 mt-0.5 text-zinc-400" />
                             Høje Taastrup Boulvard 24, <br/>2630, Høje Taastrup, Denmark
                         </p>
-                        <hr className="max-w-[220px] mx-auto my-2 md:my-3"/>
+                        <div className="max-w-[220px] mx-auto my-2 md:my-3 bg-slate-900 dark:bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] py-0.5 rounded-full"/>
                     
                         <p className="flex justify-center items-top gap-3 pb-2 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
                             <BsTelephoneInbound className="size-6 mt-0.5 text-zinc-400" />
