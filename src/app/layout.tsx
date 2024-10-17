@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from "next";
 import { Inter, Calistoga } from 'next/font/google';
 import { twMerge } from "tailwind-merge";
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={twMerge(inter.variable, calistoga.variable,"bg-gray-900 text-white antialiased font-sans")}>
         <Navbar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>

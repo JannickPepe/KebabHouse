@@ -26,7 +26,7 @@ export const TopFive = () => {
                 <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">Vores <span className="text-green-600">Top 5</span> af vores bedste <span className="text-green-600">pizza&apos;er</span></h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 mx-auto md:px-28">
                 {pizzas.map((pizza, topFiveIndex) => {
                     return (
                         <motion.div 
@@ -49,19 +49,21 @@ export const TopFive = () => {
                             }}
                             className={twMerge("flex flex-col justify-center items-center")}  
                         >
-                            <div className="text-lg md:text-xl flex items-center gap-1 text-black dark:text-zinc-400">
-                                <FaStar className="text-orange-400 dark:text-green-600"/>
-                                {pizza.title}
-                            </div>
-                            
-                            <div className="max-w-[220px] text-center my-1 md:my-2 text-black dark:text-white">
-                                {pizza.description}
-                            </div>
+                            <div className="flex flex-col justify-center items-center hover:scale-110 transition duration-300">
+                                <div className="text-lg md:text-xl flex items-center gap-1 text-black dark:text-zinc-400 font-bold">
+                                    <FaStar className="text-orange-400 dark:text-green-600"/>
+                                    {pizza.title}
+                                </div>
+                                
+                                <div className="max-w-[220px] text-center my-1 md:my-3 text-black dark:text-white font-light">
+                                    {pizza.description}
+                                </div>
 
-                            <div className="mt-3 flex gap-6 items-center">
-                                <span className="text-sm border-2 text-black dark:text-white border-green-600 py-2 px-3 rounded-full">
-                                    {pizza.price}kr / {pizza.pricediscount}kr <span className="text-xs text-red-700 dark:text-zinc-400">(Frokost Tilbud)</span>
-                                </span>
+                                <div className="mt-3 flex gap-6 items-center">
+                                    <span className="text-sm border-2 text-black dark:text-white border-green-600 py-2 px-3 rounded-full">
+                                        {pizza.price}kr / {pizza.pricediscount}kr <span className="text-xs text-red-700 dark:text-zinc-400">(Frokost Tilbud)</span>
+                                    </span>
+                                </div>
                             </div>
                         </motion.div>
                     )
