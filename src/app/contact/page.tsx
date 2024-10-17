@@ -2,19 +2,30 @@
 
 import FAQ from "@/components/FAQ";
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 import { useState } from "react";
 
 const Contact = () => {
   const [selected, setSelected] = useState("individual");
   return (
-    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
-      <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
-        <Form selected={selected} setSelected={setSelected} />
-        <Images selected={selected} />
-      </div>
+    <>
+      <Head>
+        <title>Cafe & Kebab House kontakt side</title>
+        <meta name="description" content="Cafe & Kebab House kontakt side. Send os en email vdr spørgsmål" />
+        <link rel="canonical" href="https://kebab-house.vercel.app/contact" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      
+      <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
+        <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
+          <Form selected={selected} setSelected={setSelected} />
+          <Images selected={selected} />
+        </div>
 
-      <FAQ />
-    </section>
+        <FAQ />
+      </section>
+    </>
+  
   );
 };
 

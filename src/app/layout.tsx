@@ -12,7 +12,7 @@ const calistoga = Calistoga({subsets: ['latin'], variable: "--font-serif", weigh
 
 
 export const metadata: Metadata = {
-  title: "Kebab House",
+  title: "Cafe & Kebab House",
   description: "Kebab House og cafe Høje Taastrup",
 };
 

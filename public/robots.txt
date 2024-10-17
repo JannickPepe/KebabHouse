@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kebab-house.vercel.app
+
+# Sitemaps
+Sitemap: https://kebab-house.vercel.app/sitemap.xml

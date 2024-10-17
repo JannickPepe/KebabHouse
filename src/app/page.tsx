@@ -5,48 +5,74 @@ import Ratings from "./sections/Ratings";
 import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
+import Head from "next/head";
 
 
 export default function Home() {
 
   return (
-    <div className="container mx-auto bg-zinc-200 dark:bg-slate-900">
+    <>
+      <Head>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Website",
+              "url": "https://kebab-house.vercel.app",
+              "name": "Cafe & Kebab House",
+              "description": "Cafe & Kebab House tilbyder god og frisk mad med glade kunder",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Cafe & Kebab House"
+              }
+            }
+          `}
+        </script>
+        <title>Cafe & Kebab House</title>
+        <meta name="description" content="Cafe & Kebab House ved Høje Taastrup station. Friske retter og god service" />
+        <link rel="canonical" href="https://kebab-house.vercel.app" />
+        <meta name="robots" content="index, follow" />
+      </Head>
 
-      {/* LANDING */}
-      <section id="landing">
-        <HeroLanding />
-      </section>
+      <main className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 
-      {/* MENU */}
-      <section id="menu">
-        <ShowUseMenu />
-      </section>
+        {/* LANDING */}
+        <section id="landing">
+          <HeroLanding />
+        </section>
 
-      {/* TOP 5 PIZZA */}
-      <section id="pizza">
-        <TopFive />
-      </section>
+        {/* MENU */}
+        <section id="menu">
+          <ShowUseMenu />
+        </section>
 
-      {/* FROKOST TILBUD */}
-      <section id="discount">
-        <FrokostTilbud />
-      </section>
+        {/* TOP 5 PIZZA */}
+        <section id="pizza">
+          <TopFive />
+        </section>
 
-      {/* KEBAB HOUSE STEMNING */}
-      <section id="stemning">
-        <Stemning />
-      </section>
+        {/* FROKOST TILBUD */}
+        <section id="discount">
+          <FrokostTilbud />
+        </section>
 
-      {/* RATING  */}
-      <section id="rating">
-        <Ratings />
-      </section>
+        {/* KEBAB HOUSE STEMNING */}
+        <section id="stemning">
+          <Stemning />
+        </section>
 
-      {/* KONTAKT */}
-      <section id="contact">
-        <Contact />
-      </section>
+        {/* RATING  */}
+        <section id="rating">
+          <Ratings />
+        </section>
 
-    </div>
+        {/* KONTAKT */}
+        <section id="contact">
+          <Contact />
+        </section>
+
+      </main>
+    </>
+  
   );
 }

@@ -54,7 +54,7 @@ export const Stemning = () => {
         <section className="lg:flex lg:justify-center gap-8 lg:gap-12 py-10 md:py-24 lg:py-28">
             <div className="flex justify-center items-center">
                 {imageUrl ? (
-                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden md:block" src={imageUrl} alt="Appwrite Image" />
+                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden md:block" src={imageUrl} alt="Cafe & Kebab House hygge billed" />
                 ) : (
                     <p>Loading image...</p>
                 )}
@@ -62,7 +62,7 @@ export const Stemning = () => {
 
             <div className="max-w-md relative md:mx-auto lg:mx-0 md:pt-6 md:pb-12 lg:pt-0 lg:pb-0">
                 <div className="absolute top-1/2 left-1/2 translate-y-14 translate-x-20 hidden md:block">
-                    <Image src={pitaIcon} alt="" className="size-8" />
+                    <Image src={pitaIcon} alt="Cafe & Kebab House hygge billed" className="size-8" />
                 </div>
 
                 <div className="text-center mt-4 md:mt-8 max-w-[340px] mx-auto md:max-w-full">
@@ -80,13 +80,13 @@ export const Stemning = () => {
                 </div>
 
                 <div className="absolute bottom-0 left-1/2 translate-y-6 -translate-x-36 hidden md:block">
-                    <Image src={burgerIcon} alt="" className="size-8" />
+                    <Image src={burgerIcon} alt="Cafe & Kebab House hygge billed" className="size-8" />
                 </div>
             </div>
 
             <div className="flex justify-center items-center">
                 {dinerTableTwoUrl ? (
-                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 mx-auto md:mx-0 mt-8 md:mt-0" src={dinerTableTwoUrl} alt="Appwrite Image" />
+                    <motion.img className="h-72 w-72 rounded-lg transition-all duration-300 hover:scale-110 mx-auto md:mx-0 mt-8 md:mt-0" src={dinerTableTwoUrl} alt="Cafe & Kebab House hygge billed" />
                 ) : (
                     <p>Loading image...</p>
                 )}

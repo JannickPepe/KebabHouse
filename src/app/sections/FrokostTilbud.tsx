@@ -75,7 +75,7 @@ const Feature = ({ position, index, title, description, image } : { position: nu
                 index % 2 ? "bg-black text-white" : "bg-green-600/60 text-black dark:text-white"
             }`}
         >
-            <Image src={image} alt="" className="absolute right-2 top-2 text-7xl" />
+            <Image src={image} alt="Cafe & Kebab House billed" className="absolute right-2 top-2 text-7xl" />
             <h3 className="mb-8 text-3xl font-bold">{title}</h3>
             <p className="text-lg font-bold">
                 Med Friske og nye råvarer og grønt 

@@ -1,17 +1,28 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 import { useState } from "react";
 
 const Booking = () => {
   const [selected, setSelected] = useState("booking");
+
   return (
-    <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
-      <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
-        <Form selected={selected} setSelected={setSelected} />
-        <Images selected={selected} />
-      </div>
-    </section>
+    <>
+      <Head>
+        <title>Cafe & Kebab House Booking side</title>
+        <meta name="description" content="Cafe & Kebab House booking formular. Kontakt os hvis du gerne vil booke til et arragement" />
+        <link rel="canonical" href="https://kebab-house.vercel.app/booking" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
+      <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
+        <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
+          <Form selected={selected} setSelected={setSelected} />
+          <Images selected={selected} />
+        </div>
+      </section>
+    </>
   );
 };
 
