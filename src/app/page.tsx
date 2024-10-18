@@ -5,7 +5,6 @@ import Ratings from "./sections/Ratings";
 import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 
 
@@ -13,27 +12,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Website",
-              "url": "https://kebab-house.vercel.app",
-              "name": "Cafe & Kebab House",
-              "description": "Cafe & Kebab House tilbyder god og frisk mad med glade kunder",
-              "publisher": {
-                "@type": "Organization",
-                "name": "Cafe & Kebab House"
-              }
-            }
-          `}
-        </script>
-        <title>Cafe & Kebab House</title>
-        <meta name="description" content="Cafe & Kebab House ved Høje Taastrup station. Friske retter og god service" />
-        <link rel="canonical" href="https://kebab-house.vercel.app" />
-        <meta name="robots" content="index, follow" />
-      </Head>
       <Analytics />
       <main className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 

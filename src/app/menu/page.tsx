@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import menuLeft from "@/assets/images/Menu-left.png";
 import menuRight from "@/assets/images/Menu-right.png";
@@ -7,13 +6,6 @@ export default function Menu() {
 
     return (
       <>
-        <Head>
-          <title>Cafe & Kebab House Menukort side</title>
-          <meta name="description" content="Cafe & Kebab House ved menukort. Se vores bredde udvalg af forskellige retter" />
-          <link rel="canonical" href="https://kebab-house.vercel.app/menu" />
-          <meta name="robots" content="index, follow" />
-        </Head>
-      
         <section className="pt-28 md:pt-40  mx-auto bg-zinc-200 dark:bg-slate-900">
           <div className="flex justify-center items-center ">
             <div className="text-center">

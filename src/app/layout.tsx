@@ -12,8 +12,14 @@ const calistoga = Calistoga({subsets: ['latin'], variable: "--font-serif", weigh
 
 
 export const metadata: Metadata = {
-  title: "Cafe & Kebab House",
-  description: "Kebab House og cafe Høje Taastrup",
+  title: {
+    default: "Cafe & Kebab House",
+    template: "%s - Cafe & Kebab House",
+  },
+  description: "Cafe & Kebab House I Høje Taastrup, altid frisk og god mad",
+  twitter: {
+    card: "summary_large_image"
+  },
 };
 
 export default function RootLayout({
