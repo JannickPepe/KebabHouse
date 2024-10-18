@@ -6,6 +6,7 @@ import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 
 export default function Home() {
@@ -33,7 +34,7 @@ export default function Home() {
         <link rel="canonical" href="https://kebab-house.vercel.app" />
         <meta name="robots" content="index, follow" />
       </Head>
-
+      <Analytics />
       <main className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 
         {/* LANDING */}

@@ -8,6 +8,7 @@ import { GlobalButton } from "@/components/GlobalButton";
 import GlobalReadMore from "@/components/GlobalReadMore";
 import Link from "next/link";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 
 const About = () => {
@@ -20,7 +21,7 @@ const About = () => {
                 <link rel="canonical" href="https://kebab-house.vercel.app/about" />
                 <meta name="robots" content="index, follow" />
             </Head>
-
+            <Analytics />
             <main className="relative pt-24 bg-zinc-200 dark:bg-slate-900">
                 <Features />
             </main>
