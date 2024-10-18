@@ -41,17 +41,17 @@ const RatingsCount = () => {
 
   return (
     <div className=''>
-      <div className='grid grid-cols-3 gap-4 md:gap-6 mt-4 px-4 md:px-0 lg:px-0'>
+      <div className='grid grid-cols-3 gap-4 md:gap-6 mt-4 px-4 md:px-0 lg:px-0 text-zinc-800 dark:text-zinc-300'>
         {counts.map((count, index) => (
           <div key={index}>
-            <span className='underline text-zinc-400'>{index + 1} Stjerne rating:</span> <br/> Antal stjerner: <span className='text-red-600'>{count}</span>
+            <span className='underline text-zinc-800 dark:text-zinc-400'>{index + 1} Stjerne rating:</span> <br/> Antal stjerner: <span className='text-red-600'>{count}</span>
   
           </div>
         ))}
       </div>
 
-      <div className='font-extrabold text-zinc-300 mt-2 text-center'><span className='text-red-500 font-bold'>Total Ratings:</span> {totalCount}</div>
-      <div className='font-extrabold text-zinc-300 mt-0.5 text-center'><span className='text-red-500 font-bold'>Gennemsnit Ratings:</span> {average.toFixed(2)}</div>
+      <div className='font-extrabold text-slate-600 dark:text-zinc-300 mt-2 text-center'><span className='text-red-500 font-bold'>Total Ratings:</span> {totalCount}</div>
+      <div className='font-extrabold text-slate-600 dark:text-zinc-300 mt-0.5 text-center'><span className='text-red-500 font-bold'>Gennemsnit Ratings:</span> {average.toFixed(2)}</div>
     
     </div>
   );

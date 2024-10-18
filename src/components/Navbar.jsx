@@ -7,7 +7,7 @@ import useMeasure from "react-use-measure";
 import { GlobalButton } from "./GlobalButton";
 import { CiPizza } from "react-icons/ci";
 import Image from "next/image";
-import testLogo from "../assets/images/testlogo.jpeg";
+import testLogo from "../assets/images/logo.png";
 import ToggleWrapper from "./NewThemeToggle";
 import Link from "next/link";
 
