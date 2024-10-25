@@ -1,7 +1,7 @@
-import imageOne from '../assets/icons/shawarma.png';
-import imageTwo from '../assets/icons/kebabbox.png';
-import imageThree from '../assets/icons/pizza.png';
-import imageFour from '../assets/icons/burger.png';
+import imageOne from '../assets/images/2-kebabs.png';
+import imageTwo from '../assets/images/lave-pizza.png';
+import imageThree from '../assets/images/mange-pizza.png';
+import imageFour from '../assets/images/lave-durum.png';
 
 
 export const aboutOne = [

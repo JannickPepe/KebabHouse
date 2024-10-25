@@ -70,19 +70,19 @@ const shuffle = (array) => {
 const squareData = [
     {
         id: 1,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/67057f25003d0addfcda/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
+        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/671bf1250005b7568b71/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
     },
     {
         id: 2,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/67057f1d002721117823/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
+        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/671bf59a001a47bc40a7/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
     },
     {
         id: 3,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/6705184400043280f864/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
+        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/671bf5800013749c8ddf/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
     },
     {
         id: 4,
-        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/6705183c0017aebd50f6/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
+        src: "https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/671bf5ca0029494a118b/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin",
     },
 ];
 

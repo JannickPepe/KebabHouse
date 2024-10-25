@@ -80,24 +80,24 @@ const Carousel = () => {
 
             <div ref={ref} className="relative z-0 flex flex-col gap-6 md:gap-12">
                 <CarouselItem
-                scrollYProgress={scrollYProgress}
-                position={1}
-                numItems={4}
+                    scrollYProgress={scrollYProgress}
+                    position={1}
+                    numItems={4}
                 />
                 <CarouselItemTwo
-                scrollYProgress={scrollYProgress}
-                position={2}
-                numItems={4}
+                    scrollYProgress={scrollYProgress}
+                    position={2}
+                    numItems={4}
                 />
                 <CarouselItemThree
-                scrollYProgress={scrollYProgress}
-                position={3}
-                numItems={4}
+                    scrollYProgress={scrollYProgress}
+                    position={3}
+                    numItems={4}
                 />
                 <CarouselItemFour
-                scrollYProgress={scrollYProgress}
-                position={4}
-                numItems={4}
+                    scrollYProgress={scrollYProgress}
+                    position={4}
+                    numItems={4}
                 />
             </div>
 
@@ -123,11 +123,11 @@ const CarouselItem = ({ scrollYProgress, position, numItems} : {scrollYProgress:
                 opacity,
                 scale,
             }}
-            className="grid aspect-video w-full shrink-0 place-content-center rounded-2xl bg-neutral-900"
+            className="grid aspect-video w-full shrink-0 place-content-center"
         >
-        {aboutOne.map((index) => (
-            <Image key={null} src={index.quoteone} alt="Cafe & Kebab House billed galleri" />
-        ))}
+            {aboutOne.map((index) => (
+                <Image key={null} src={index.quoteone} className="h-96 w-96 rounded-xl" alt="Cafe & Kebab House billed galleri" />
+            ))}
         </motion.div>
     );
 };
@@ -148,11 +148,11 @@ const CarouselItemTwo = ({ scrollYProgress, position, numItems} : {scrollYProgre
                 opacity,
                 scale,
             }}
-            className="grid aspect-video w-full shrink-0 place-content-center rounded-2xl bg-neutral-900"
+            className="grid aspect-video w-full shrink-0 place-content-center"
         >
-        {aboutTwo.map((index) => (
-            <Image key={null} src={index.quoteone} alt="Cafe & Kebab House billed galleri" />
-        ))}
+            {aboutTwo.map((index) => (
+                <Image key={null} src={index.quoteone} className="h-96 w-96 rounded-xl" alt="Cafe & Kebab House billed galleri" />
+            ))}
         </motion.div>
     );
 };
@@ -173,11 +173,11 @@ const CarouselItemThree = ({ scrollYProgress, position, numItems} : {scrollYProg
                 opacity,
                 scale,
             }}
-            className="grid aspect-video w-full shrink-0 place-content-center rounded-2xl bg-neutral-900"
+            className="grid aspect-video w-full shrink-0 place-content-center"
         >
-        {aboutThree.map((index) => (
-            <Image key={null} src={index.quoteone} alt="Cafe & Kebab House billed galleri" />
-        ))}
+            {aboutThree.map((index) => (
+                <Image key={null} src={index.quoteone} className="h-96 w-96 rounded-xl" alt="Cafe & Kebab House billed galleri" />
+            ))}
         </motion.div>
     );
 };
@@ -198,11 +198,11 @@ const CarouselItemFour = ({ scrollYProgress, position, numItems} : {scrollYProgr
                 opacity,
                 scale,
             }}
-            className="grid aspect-video w-full shrink-0 place-content-center rounded-2xl bg-neutral-900"
+            className="grid aspect-video w-full shrink-0 place-content-center"
         >
-        {aboutFour.map((index) => (
-            <Image key={null} src={index.quoteone} alt="Cafe & Kebab House billed galleri" />
-        ))}
+            {aboutFour.map((index) => (
+                <Image key={null} src={index.quoteone} className="h-96 w-96 rounded-xl" alt="Cafe & Kebab House billed galleri" />
+            ))}
         </motion.div>
     );
 };

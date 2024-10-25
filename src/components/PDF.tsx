@@ -15,14 +15,14 @@ const PdfViewerComponent: React.FC = () => {
             {/* Step 3: Button to open PDF */}
             <button 
                 onClick={openPdf} 
-                className="text-black px-4 py-2 rounded-md hover:text-green-500 transition duration-300 font-bold border-2 border-red-500"
+                className="text-black dark:text-zinc-300 px-4 py-2 rounded-md hover:text-green-500 transition duration-300 font-bold border-2 border-red-500"
                 >
                     Åben PDF Menu
             </button>
 
             {/* Step 4: PDF Modal */}
             {isPdfOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[999999]">
                     <div className="bg-white p-2 rounded-lg shadow-lg w-full max-w-6xl mt-20">
                         {/* Close button */}
                         <button 
@@ -35,7 +35,7 @@ const PdfViewerComponent: React.FC = () => {
                         {/* Display PDF inside iframe */}
                         <iframe 
                             src="/sebi.pdf" // Path to your PDF file
-                            className="w-full h-96 border-0"
+                            className="w-full h-[500px] border-0 z-[999999]"
                             title="PDF Viewer"
                         />
                     </div>
