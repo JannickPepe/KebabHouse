@@ -8,7 +8,6 @@ export async function getEvents() {
         process.env.NEXT_APPWRITE_DATABASE_ID,
         process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID,
         [
-            Query.limit(5), // Limit the results to 5 documents
             Query.orderDesc('$createdAt') // Sort by creation date in descending order
         ]
     );
