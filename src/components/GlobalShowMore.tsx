@@ -21,7 +21,7 @@ const GlobalShowMore: React.FC<GlobalShowMoreProps> = ({ label, children, classN
                 className={twMerge(`
                     relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
                     dark:border-green-300 border-red-300 px-4 py-2 font-semibold
-                    uppercase dark:text-green-300 text-red-400 transition-all duration-500
+                    uppercase dark:text-green-300 dark:hover:text-black text-red-400 transition-all duration-500
                     before:absolute before:inset-0
                     before:-z-10 before:translate-x-[150%]
                     before:translate-y-[150%] before:scale-[2.5]

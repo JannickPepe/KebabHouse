@@ -13,8 +13,8 @@ const PagiBurger = () => {
 
     useEffect(() => {
         const fetchBurgers = async () => {
-            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID,
-                process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID, [
+            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID, process.env.NEXT_APPWRITE_COLLECTION_BURGER_ID, 
+            [
                 Query.orderDesc('$createdAt'),
                 Query.limit (burgersPerPage),
                 Query.offset ((currentPage - 1) * burgersPerPage),

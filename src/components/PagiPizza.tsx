@@ -13,8 +13,8 @@ const PagiPizza = () => {
 
     useEffect(() => {
         const fetchPizzas = async () => {
-            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID,
-                process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID, [
+            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID, process.env.NEXT_APPWRITE_COLLECTION_PIZZA_ID, 
+            [
                 Query.orderDesc('$createdAt'),
                 Query.limit (pizzasPerPage),
                 Query.offset ((currentPage - 1) * pizzasPerPage),

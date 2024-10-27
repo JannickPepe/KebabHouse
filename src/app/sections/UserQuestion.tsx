@@ -50,7 +50,7 @@ const Contact = () => {
                         <p className='text-center text-zinc-500 py-4 max-w-[400px] mx-auto'>
                             Vi vil hurtigst muligt besvare din henvendelse <br/> De bedste hilsner <span className='underline'>Cafe & Kebab House</span>
                         </p>
-                        <form  onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <div className="max-w-md mx-auto space-y-3">
                             <input 
                                 type='text' 
