@@ -5,4 +5,5 @@ export interface BurgerModel {
     price: number;
     image?: string;
     pricediscount: number;
+    foodnumber?: string;
 }

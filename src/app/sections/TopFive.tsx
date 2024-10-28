@@ -50,6 +50,9 @@ export const TopFive = () => {
                             className={twMerge("flex flex-col justify-center items-center")}  
                         >
                             <div className="flex flex-col justify-center items-center hover:scale-110 transition duration-300 bg-green-900/60 rounded-lg px-2 py-4">
+                                <div className="bg-zinc-800 px-2 py-1 rounded-full mb-2">
+                                    <span className="text-sm font-light">{pizza.foodnumber}</span>
+                                </div>
                                 <div className="text-lg md:text-xl flex items-center gap-1 text-zinc-300 dark:text-zinc-400 font-bold">
                                     <FaStar className="text-orange-400 dark:text-green-600"/>
                                     {pizza.title}
@@ -60,7 +63,7 @@ export const TopFive = () => {
                                 </div>
 
                                 <div className="mt-3 flex gap-6 items-center">
-                                    <span className="text-sm border-2 text-black font-bold dark:text-white border-slate-700 py-2 px-3 rounded-full">
+                                    <span className="text-sm border-2 text-black font-bold dark:text-white border-black py-2 px-3 rounded-full">
                                         {pizza.price}kr/{pizza.pricediscount}kr<span className="text-xs text-red-900 dark:text-red-500 tracking-wide">(Frokost Tilbud)</span>
                                     </span>
                                 </div>

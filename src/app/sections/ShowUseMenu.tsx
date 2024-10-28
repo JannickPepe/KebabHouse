@@ -116,6 +116,9 @@ export default function ShowMenu() {
                     {menuItems.length > 0 ? (
                         menuItems.map((item, index) => (
                             <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md text-center">
+                                <div className="bg-zinc-800 px-2 py-1 rounded-full mb-2 max-w-[60px] mx-auto">
+                                    <span className="text-sm font-light">{item.foodnumber}</span>
+                                </div>
                                 <h3 className="text-xl font-bold mb-2 text-zinc-700 dark:text-white">{item.title}</h3>
                                 <p className="text-zinc-500 mb-2">{item.description}</p>
                                 <p className="text-zinc-600 dark:text-zinc-400 font-bold mb-2">{item.price.toFixed(2)}kr</p>

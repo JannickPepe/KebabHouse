@@ -5,4 +5,5 @@ export interface PitabreadModel {
     price: number;
     image?: string;
     pricediscount: number;
+    foodnumber?: string;
 }

@@ -22,6 +22,7 @@ export async function getEvents() {
                 price: document.price,
                 image: document.image,
                 pricediscount: document.pricediscount,
+                foodnumber: document.foodnumber,
             }
             return pizza;
         })

@@ -29,22 +29,22 @@ const SearchBar: React.FC = () => {
 
             // Perform FullText search for both collections
             const pizzaResults = await databases.listDocuments(databaseId, pizzaCollectionId, [
-                Query.search('title', searchQuery), // Replace 'name' with your FullText indexed field
+                Query.search('title', searchQuery), 
             ]);
             const burgerResults = await databases.listDocuments(databaseId, burgerCollectionId, [
-                Query.search('title', searchQuery), // Replace 'name' with your FullText indexed field
+                Query.search('title', searchQuery), 
             ]);
             const pitabreadResults = await databases.listDocuments(databaseId, pitabreadCollectionId, [
-                Query.search('title', searchQuery), // Replace 'name' with your FullText indexed field
+                Query.search('title', searchQuery), 
             ]);
             const durumResults = await databases.listDocuments(databaseId, durumCollectionId, [
-                Query.search('title', searchQuery), // Replace 'name' with your FullText indexed field
+                Query.search('title', searchQuery), 
             ]);
             const wholemenuResults = await databases.listDocuments(databaseId, wholemenuCollectionId, [
-                Query.search('title', searchQuery), // Replace 'name' with your FullText indexed field
+                Query.search('title', searchQuery), 
             ]);
 
-            // Combine results from both collections
+            // Combine results from collections
             setResults([...pizzaResults.documents, ...burgerResults.documents, ...pitabreadResults.documents, ...durumResults.documents, ...wholemenuResults.documents]);
 
         } catch (error) {
@@ -57,6 +57,7 @@ const SearchBar: React.FC = () => {
         const handleClickOutside = (event: MouseEvent) => {
             if (formRef.current && !formRef.current.contains(event.target as Node)) {
                 setResults([]); // Clear the search results
+                setSearchQuery(''); // Clear input text
             }
         };
 
@@ -83,7 +84,7 @@ const SearchBar: React.FC = () => {
                         placeholder="Skriv en titel..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-1/2 md:w-3/4 px-2 py-2 text-zinc-800"
+                        className="w-1/2 md:w-3/4 px-2 py-2 text-zinc-800 focus:shadow-md focus:shadow-green-500 focus:outline-none"
                         style={{borderTopRightRadius: 10, borderBottomRightRadius: 10}}
                     />
                 </form>
@@ -93,6 +94,9 @@ const SearchBar: React.FC = () => {
                 {results.length > 0 ? (
                     results.map((item, index) => (
                         <div key={index} className="py-4 border-b border-green-600">
+                            <div className="bg-zinc-800 px-2 py-1 rounded-full mb-2 max-w-[60px] text-center">
+                                <span className="text-sm font-light">{item.foodnumber}</span>
+                            </div>
                             <h3 className="text-lg font-semibold text-black dark:text-zinc-200">{item.title}</h3>
                             <p className='text-zinc-500 dark:text-zinc-400 my-2'>{item.description}</p>
                             <div className='flex items-center gap-3 mt-4'>

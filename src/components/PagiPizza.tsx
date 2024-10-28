@@ -40,11 +40,14 @@ const PagiPizza = () => {
             </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
                     {pizzas.map((pizza) => (
-                        <div key={pizza.title} className="border-2 p-4 rounded-md border-green-600">
+                        <div key={pizza.title} className="border-2 p-4 rounded-md border-green-600 text-center">
+                            <div className="bg-zinc-800 px-2 py-1 rounded-full mb-2 max-w-[60px] mx-auto">
+                                <span className="text-sm font-light">{pizza.foodnumber}</span>
+                            </div>
                             <h2 className="font-bold text-xl text-black dark:text-zinc-300">{pizza.title}</h2>
                             <p className='py-1 text-black dark:text-zinc-400'>{pizza.description}</p>
 
-                            <div className='flex justify-start items-center mt-2 gap-3'>
+                            <div className='flex justify-center items-center mt-2 gap-3'>
                                 <p className="text-zinc-600 dark:text-zinc-400 font-bold mb-2 mt-2">
                                     {pizza.price.toFixed(2)}kr
                                 </p>

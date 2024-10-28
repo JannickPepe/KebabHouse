@@ -4,4 +4,5 @@ export interface MenuItem {
     price: number;
     pricediscount: number;
     image?: string;
+    foodnumber?: string;
 }
