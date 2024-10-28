@@ -12,7 +12,18 @@ const Booking = () => {
       <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
         <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
           <Form  />
-          <Images />
+          <div className="relative overflow-hidden w-full min-h-[100px]">
+            <motion.div
+              initial={false}
+              transition={BASE_TRANSITION}
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "url(https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670e6cff000c2e445171/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin)",
+                backgroundPosition: "center",
+              }}
+            />
+          </div>
         </div>
       </section>
     </>
@@ -91,7 +102,7 @@ const Form = () => {
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           required
-          className={`transition-colors duration-[750ms] text-black placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+          className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
 
@@ -113,14 +124,14 @@ const Form = () => {
             transition={BASE_TRANSITION}
             className="mb-6"
           >
-            <p className="text-2xl mb-2">I hvems navn...</p>
+            <p className="text-2xl mb-2">I hvems navn</p>
             <input
               type="text"
               placeholder="Dit booking navn..."
               value={bookingName}
               onChange={(e) => setBookingName(e.target.value)}
               required
-              className={`transition-colors duration-[750ms] text-black placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+              className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
             />
 
             <div className="my-4">
@@ -139,12 +150,12 @@ const Form = () => {
 
       {/* Info */}
       <div className="mb-6">
-        <p className="text-2xl mb-2">Værsgo og spørg løs...</p>
+        <p className="text-2xl mb-2">Bemærkninger</p>
         <textarea
           placeholder="Skriv venligst antal gæster :)"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          className={`transition-colors duration-[750ms] min-h-[150px] text-black resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+          className={`transition-colors duration-[750ms] min-h-[150px] text-black resize-none p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
 
@@ -168,34 +179,6 @@ const Form = () => {
         </p>
       )}
     </form>
-  );
-};
-
-
-const Images = () => {
-  return (
-    <div className="bg-white relative overflow-hidden w-full min-h-[100px]">
-      <motion.div
-        initial={false}
-        transition={BASE_TRANSITION}
-        className="absolute inset-0 bg-slate-200"
-        style={{
-          backgroundImage:
-            "url(https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670e6d07000ebd0cbd34/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin)",
-          backgroundPosition: "center",
-        }}
-      />
-      <motion.div
-        initial={false}
-        transition={BASE_TRANSITION}
-        className="absolute inset-0 bg-slate-200"
-        style={{
-          backgroundImage:
-            "url(https://cloud.appwrite.io/v1/storage/buckets/67042a27001c1cb0f479/files/670e6cff000c2e445171/view?project=670427e60002e065ca53&project=670427e60002e065ca53&mode=admin)",
-          backgroundPosition: "center",
-        }}
-      />
-    </div>
   );
 };
 

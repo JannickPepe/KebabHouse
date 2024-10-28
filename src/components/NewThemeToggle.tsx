@@ -32,9 +32,9 @@ const ToggleWrapper = () => {
                 transition={{ duration: 0.5 }}
             >
                 {theme === 'light' ? (
-                    <Image src={sunIcon} alt='kebab house sun icon' />
+                    <Image className='size-3 md:size-4 lg:size-5' src={sunIcon} alt='kebab house sun icon' />
                 ) : (
-                    <Image src={moonIcon} alt='kebab house moon icon' />
+                    <Image className='size-3 md:size-4 lg:size-5' src={moonIcon} alt='kebab house moon icon' />
                 )}
             </motion.div>
         </button>

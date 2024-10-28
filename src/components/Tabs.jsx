@@ -30,7 +30,7 @@ const SlideTabs = () => {
                     opacity: 0,
                     }));
                 }}
-                className="relative flex w-fit rounded-full p-0.5 md:p-1 -ml-5"
+                className="relative flex w-fit rounded-full p-0.5 md:p-1 -ml-2 md:-ml-5"
             >
                 <Link href="#pizza">
                     <Tab setPosition={setPosition}>

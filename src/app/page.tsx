@@ -6,6 +6,7 @@ import { Stemning } from "./sections/Stemning";
 import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
 import { Analytics } from "@vercel/analytics/react";
+import SideNavbar from "@/components/SideNavbar";
 
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
     <>
       <Analytics />
       <main className="container mx-auto bg-zinc-200 dark:bg-slate-900">
+
+        <SideNavbar />
 
         {/* LANDING */}
         <section id="landing">

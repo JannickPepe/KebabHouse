@@ -6,8 +6,6 @@ import { FiMenu } from "react-icons/fi";
 import useMeasure from "react-use-measure";
 import { GlobalButton } from "./GlobalButton";
 import { CiPizza } from "react-icons/ci";
-import Image from "next/image";
-import testLogo from "../assets/images/logo.png";
 import ToggleWrapper from "./NewThemeToggle";
 import Link from "next/link";
 
@@ -64,7 +62,7 @@ const GlassNavigation = () => {
         >
             <div className="glass-nav md:flex items-center justify-between px-5 py-5">
                 <Cursor hovered={hovered} scope={scope} />
-                <a href="/"><Image priority src={testLogo} alt="kebab house logo" className="size-16 rounded-full hidden md:block" /></a>
+                <a href="/" className="text-zinc-300 font-semibold  hidden md:block">Cafe & <span className="-mt-2 block">Kebab House</span></a>
                 <Links />
                 <Buttons setMenuOpen={setMenuOpen} />
             </div>
@@ -148,11 +146,13 @@ const MobileMenu = ({ menuOpen }) => {
         >
             <div ref={ref} className="flex items-center justify-between px-4 pb-4">
                 <div className="flex flex-wrap items-center ml-2 gap-2">
-                    <a href="/"><Image priority src={testLogo} alt="kebab house logo" className="size-10 rounded-full" /></a>
                     <a href="about"><GlassLink text="Om Os" /></a>
                     <a href="booking"><GlassLink text="Booking" /></a>
                     <a href="contact"><GlassLink text="kontakt" /></a>
-                    <ToggleWrapper />
+                    <div className="flex items-center ml-4 gap-4">
+                        <a href="/" className="text-zinc-300 text-sm font-semibold">Cafe & <span className="-mt-2 block">Kebab House</span></a>
+                        <ToggleWrapper />
+                    </div>
                 </div>
             </div>
         </motion.div>
