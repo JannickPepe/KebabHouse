@@ -2,7 +2,9 @@
 
 import { databases } from '@/lib/appwrite';
 import { Query } from 'appwrite';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { IoSearchOutline } from "react-icons/io5";
+
 
 
 const SearchBar: React.FC = () => {
@@ -10,7 +12,10 @@ const SearchBar: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [results, setResults] = useState<any[]>([]);
 
-    const handleSearch = async () => {
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleSearch = async (e: React.FormEvent) => {
+        e.preventDefault(); // Prevent the form from reloading the page
         if (!searchQuery) return;
 
         try {
@@ -47,36 +52,55 @@ const SearchBar: React.FC = () => {
         }
     };
 
+     // Clear results when clicking outside the form
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (formRef.current && !formRef.current.contains(event.target as Node)) {
+                setResults([]); // Clear the search results
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+
+    }, []);
+
     return (
-        <div className="">
-            <div className='flex items-center justify-center gap-2'>
-                <button
-                    onClick={handleSearch}
-                    className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-green-600"
-                >
-                    Søg
-                </button>
-                <input
-                    type="text"
-                    placeholder="Skriv en titel..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-1/2 md:w-3/4 px-2 py-2 border text-red-500 border-gray-300 rounded-md"
-                />
+        <section>
+            <div className='flex items-center justify-center max-w-xs mx-auto'>
+                <form onSubmit={handleSearch} ref={formRef} className="flex items-center">
+                    <button
+                        onClick={handleSearch}
+                        className="px-4 py-2 bg-emerald-500 text-zinc-800 hover:bg-green-600 group"
+                        style={{borderTopLeftRadius: 10, borderBottomLeftRadius: 10}}
+                    >
+                        <IoSearchOutline className='size-6 group-hover:text-zinc-200' />
+                    </button>
+                    <input
+                        type="text"
+                        placeholder="Skriv en titel..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-1/2 md:w-3/4 px-2 py-2 text-zinc-800"
+                        style={{borderTopRightRadius: 10, borderBottomRightRadius: 10}}
+                    />
+                </form>
             </div>
 
-            <div className="ml-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-4 mb-14">
                 {results.length > 0 ? (
                     results.map((item, index) => (
-                        <div key={index} className="py-4 border-b border-gray-200">
-                            <h3 className="font-semibold">{item.title}</h3>
-                            <p>{item.description}</p>
-                            <div className='flex'>
-                                <p>
+                        <div key={index} className="py-4 border-b border-green-600">
+                            <h3 className="text-lg font-semibold text-black dark:text-zinc-200">{item.title}</h3>
+                            <p className='text-zinc-500 dark:text-zinc-400 my-2'>{item.description}</p>
+                            <div className='flex items-center gap-3 mt-4'>
+                                <p className='text-black dark:text-zinc-300'>
                                     {item.price}kr
                                 </p>
-                                <p>
-                                    {item.pricediscount}kr
+                                <p className='ring-1 ring-red-500 rounded-lg px-2 py-1 text-black dark:text-zinc-300'>
+                                    Tilbud: {item.pricediscount}kr
                                 </p>
                             </div>
                         </div>
@@ -85,7 +109,7 @@ const SearchBar: React.FC = () => {
                         ''
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -11,8 +11,6 @@ import steakIcon from "@/assets/icons/steak.png";
 import durumIcon from "@/assets/icons/shawarma.png";
 import Tooltip from '@/components/ToolTip';
 import { useRouter } from 'next/navigation';
-import SearchBar from '@/components/Searchbar';
-
 
 export default function ShowMenu() {
 
@@ -132,13 +130,10 @@ export default function ShowMenu() {
                     )}
                 </div>
 
-                <div className='md:flex justify-center items-center mt-12 gap-8 space-y-6 md:space-y-0'>
-                    <div className='flex justify-center md:flex-none'>
-                        <button onClick={handleClick} className='text-zinc-300 text-2xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
-                            Se hele <span className='text-green-500 group-hover:text-red-500'>udvalget</span>
-                        </button>
-                    </div>
-                    <SearchBar />
+                <div className='flex justify-center items-center mt-12 gap-6 space-y-6 md:space-y-0'>
+                    <button onClick={handleClick} className='text-zinc-300 text-lg md:text-xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
+                        Se hele <span className='text-green-500 group-hover:text-red-500'>udvalget</span>
+                    </button>
                 </div>
                 
             </section>

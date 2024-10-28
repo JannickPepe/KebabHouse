@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { databases } from '../lib/appwrite';
 import { Query } from 'appwrite';
 import { MenuItem } from '@/models/menumodel';
+import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineNavigateBefore } from "react-icons/md";
 
 const PagiPizza = () => {
     const [pizzas, setPizzas] = useState<MenuItem[]>([]);
@@ -33,19 +35,21 @@ const PagiPizza = () => {
         <main className='px-4 md:px-0 py-4 md:py-0'>
 
             <section className='max-w-6xl mx-auto'>
-            <h2 className='text-center text-xl md:text-4xl mb-4 font-semibold uppercase tracking-wider'>Pizzas</h2>
+            <h2 className='text-center text-xl md:text-4xl mb-4 font-semibold uppercase tracking-wider text-black dark:text-zinc-300'>
+                Pizzas
+            </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
                     {pizzas.map((pizza) => (
                         <div key={pizza.title} className="border-2 p-4 rounded-md border-green-600">
-                            <h2 className="font-bold text-xl">{pizza.title}</h2>
-                            <p className='py-1'>{pizza.description}</p>
+                            <h2 className="font-bold text-xl text-black dark:text-zinc-300">{pizza.title}</h2>
+                            <p className='py-1 text-black dark:text-zinc-400'>{pizza.description}</p>
 
                             <div className='flex justify-start items-center mt-2 gap-3'>
                                 <p className="text-zinc-600 dark:text-zinc-400 font-bold mb-2 mt-2">
                                     {pizza.price.toFixed(2)}kr
                                 </p>
                                 {pizza.pricediscount > 0 && (
-                                    <p className="text-zinc-200 font-semi-bold outline outline-offset-1 outline-red-600 rounded-full px-2 py-0.5">
+                                    <p className="text-black dark:text-zinc-300 font-semi-bold outline outline-offset-1 outline-red-600 rounded-full px-2 py-0.5">
                                         Tilbud: {pizza.pricediscount.toFixed(2)}kr
                                     </p>
                                 )}
@@ -56,13 +60,13 @@ const PagiPizza = () => {
             </section>
         
 
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-6">
                 <button 
                     onClick={prevPage} 
                     disabled={currentPage === 1} 
-                    className="mx-2 px-4 py-2 bg-emerald-500 text-white rounded disabled:opacity-50"
+                    className="mx-2 px-2 py-2 bg-emerald-500 text-white rounded disabled:opacity-50"
                 >
-                    Previous
+                    <MdOutlineNavigateBefore className='size-5' />
                 </button>
 
                 {Array.from({ length: totalPages }, (_, index) => (
@@ -78,9 +82,9 @@ const PagiPizza = () => {
                 <button 
                     onClick={nextPage} 
                     disabled={currentPage === totalPages} 
-                    className="mx-2 px-4 py-2 bg-emerald-500 text-white rounded disabled:opacity-50"
+                    className="mx-2 px-2 py-2 bg-emerald-500 text-white rounded disabled:opacity-50"
                 >
-                    Next
+                    <MdOutlineNavigateNext className='size-5' />
                 </button>
             </div>
             

@@ -1,11 +1,14 @@
 import PagiBurger from '@/components/PagiBurger'
 import PagiPizza from '@/components/PagiPizza'
-import React from 'react'
+import SearchBar from '@/components/Searchbar'
+
 
 const AllFood = () => {
     return (
         <main className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-28 mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900 space-y-4 md:space-y-10">
-            
+
+            <SearchBar />
+    
             {/* PIZZA */}
             <section>
                 <PagiPizza />
