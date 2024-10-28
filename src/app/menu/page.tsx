@@ -7,7 +7,7 @@ export default function Menu() {
 
     return (
       <>
-        <section className="pt-28 md:pt-40  mx-auto bg-zinc-200 dark:bg-slate-900">
+        <section className="pt-28 md:pt-40 mx-auto bg-zinc-200 dark:bg-slate-900">
           <div className="flex justify-center items-center ">
             <div className="text-center">
               <h1 className="text-xl md:text-3xl lg:text-5xl font-bold my-4 text-zinc-800 dark:text-zinc-300">
@@ -22,7 +22,7 @@ export default function Menu() {
             </div>
           </div>
     
-          <div className="grid grid-cols-1 md:grid-cols-2 py-6 mt-4 md:mt-6 gap-4 md:gap-8 max-w-6xl mx-auto px-6 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 py-6 my-4 md:my-8 gap-4 md:gap-8 max-w-6xl mx-auto px-6 md:px-0">
             <div className="border-2 border-red-700 py-2 px-2 rounded-md md:hover:scale-110 transition duration-300">
               <Image src={menuLeft} alt="kebab house menukort" className="rounded-sm " />
             </div>

@@ -71,7 +71,7 @@ const SearchBar: React.FC = () => {
     return (
         <section>
             <div className='flex items-center justify-center max-w-xs mx-auto'>
-                <form onSubmit={handleSearch} ref={formRef} className="flex items-center">
+                <form onSubmit={handleSearch} ref={formRef} className="flex items-center justify-center">
                     <button
                         onClick={handleSearch}
                         className="px-4 py-2 bg-emerald-500 text-zinc-800 hover:bg-green-600 group"
@@ -90,7 +90,7 @@ const SearchBar: React.FC = () => {
                 </form>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-4 mb-14">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-4 mb-8 md:mb-14">
                 {results.length > 0 ? (
                     results.map((item, index) => (
                         <div key={index} className="py-4 border-b border-green-600">
