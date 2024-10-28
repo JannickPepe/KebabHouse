@@ -1,33 +1,85 @@
 "use client";
 
+import { databases } from "@/lib/appwrite";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Booking = () => {
-  const [selected, setSelected] = useState("booking");
+  
 
   return (
     <>
       <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
         <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
-          <Form selected={selected} setSelected={setSelected} />
-          <Images selected={selected} />
+          <Form  />
+          <Images />
         </div>
       </section>
     </>
   );
 };
 
-const Form = ({ selected, setSelected } : {selected: string; setSelected: unknown;}) => {
+const Form = () => {
+
+  const [fullName, setFullName] = useState('');
+  const [bookingName, setBookingName] = useState('');
+  const [bookingDate, setBookingDate] = useState('');
+  const [question, setQuestion] = useState('');
+  const [confirmationMessage, setConfirmationMessage] = useState('');
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      try {
+          const response = await databases.createDocument(
+              process.env.NEXT_APPWRITE_DATABASE_ID,
+              process.env.NEXT_APPWRITE_COLLECTION_BOOKING_ID, 
+              'unique()',         
+              {
+                  fullName,
+                  bookingName,
+                  bookingDate,
+                  question,
+              }
+          );
+
+        if (response) {
+            setConfirmationMessage('Din Booking er nu modtaget, vh. Cafe & Kebab House');
+            // Clear form fields
+            setFullName('');
+            setBookingName('');
+            setBookingDate('');
+            setQuestion('');
+
+            // Clear any existing timeout
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+            // Set a timeout to clear the confirmation message after 10 seconds
+            timeoutRef.current = setTimeout(() => {
+              setConfirmationMessage('');
+            }, 3000);
+        }
+
+      } catch (error) {
+          console.error('Failed to submit booking:', error);
+          setConfirmationMessage('There was an error submitting your booking.');
+
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+          timeoutRef.current = setTimeout(() => {
+            setConfirmationMessage('');
+          }, 3000);
+      }
+  };
+
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
-      className={`p-8 w-full text-white transition-colors duration-[750ms] ${
-        selected === "booking" ? "bg-red-700/80" : "bg-green-700"
-      }`}
+      onSubmit={handleSubmit}
+      className={`p-8 w-full text-white transition-colors duration-[750ms] bg-red-700/80`}
     >
       <h3 className="text-4xl font-bold mb-6 uppercase">
-        {selected === "booking" ? "Book hos os" : "kontakt os"}
+        Book hos os
       </h3>
 
       {/* Name input */}
@@ -36,27 +88,17 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
         <input
           type="text"
           placeholder="Mit navn..."
-          className={`${
-            selected === "booking" ? "bg-slate-700" : "bg-green-600"
-          } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          required
+          className={`transition-colors duration-[750ms] text-black placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
-      </div>
-
-      {/* booking/individual toggle */}
-      <div className="mb-6">
-        <p className="text-2xl mb-2">Vælg mellem</p>
-        <FormSelect selected={selected} setSelected={setSelected} />
       </div>
 
       {/* booking name */}
       <AnimatePresence>
-        {selected === "booking" && (
           <motion.div
             initial={{
-              // 104 === height of element + margin
-              // Alternatively can use mode='popLayout' on AnimatePresence
-              // and add the "layout" prop to relevant elements to reduce
-              // distortion
               marginTop: -104,
               opacity: 0,
             }}
@@ -75,22 +117,34 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
             <input
               type="text"
               placeholder="Dit booking navn..."
-              className={`${
-                selected === "booking" ? "bg-slate-700" : "bg-green-700"
-              } transition-colors duration-[750ms] placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+              value={bookingName}
+              onChange={(e) => setBookingName(e.target.value)}
+              required
+              className={`transition-colors duration-[750ms] text-black placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
             />
+
+            <div className="my-4">
+              <label className="text-2xl">Booking Dato</label>
+              <input
+                type="datetime-local"
+                value={bookingDate}
+                onChange={(e) => setBookingDate(e.target.value)}
+                required
+                className="mt-1 block w-full px-3 py-2 border text-red-500 border-gray-300 rounded-md"
+              />
+            </div>
           </motion.div>
-        )}
+  
       </AnimatePresence>
 
       {/* Info */}
       <div className="mb-6">
         <p className="text-2xl mb-2">Værsgo og spørg løs...</p>
         <textarea
-          placeholder="Har du ydre bemærkninger :)"
-          className={`${
-            selected === "booking" ? "bg-slate-700" : "bg-green-600"
-          } transition-colors duration-[750ms] min-h-[150px] resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
+          placeholder="Skriv venligst antal gæster :)"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          className={`transition-colors duration-[750ms] min-h-[150px] text-black resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
 
@@ -103,64 +157,26 @@ const Form = ({ selected, setSelected } : {selected: string; setSelected: unknow
           scale: 0.99,
         }}
         type="submit"
-        className={`${
-          selected === "booking"
-            ? "bg-white text-red-600"
-            : "bg-white text-green-600"
-        } transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold`}
+        className={` transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold bg-white text-red-600`}
       >
         Send
       </motion.button>
+
+      {confirmationMessage && (
+        <p className="mt-4 text-center text-black font-semibold">
+          {confirmationMessage}
+        </p>
+      )}
     </form>
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const FormSelect = ({ selected, setSelected } : {selected: string; setSelected: any}) => {
-  return (
-    <div className="border-[1px] rounded border-white overflow-hidden font-medium w-fit">
-      <button
-        className={`${
-          selected === "booking" ? "text-red-600" : "text-white"
-        } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("booking")}
-      >
-        <span className="relative z-10">Booking her</span>
-        {selected === "booking" && (
-          <motion.div
-            transition={BASE_TRANSITION}
-            layoutId="form-tab"
-            className="absolute inset-0 bg-white z-0"
-          />
-        )}
-      </button>
-      <button
-        className={`${
-          selected === "individual" ? "text-green-600" : "text-white"
-        } text-sm px-3 py-1.5 transition-colors duration-[750ms] relative`}
-        onClick={() => setSelected("individual")}
-      >
-        <span className="relative z-10">Spørgsmål</span>
-        {selected === "individual" && (
-          <motion.div
-            transition={BASE_TRANSITION}
-            layoutId="form-tab"
-            className="absolute inset-0 bg-white z-0"
-          />
-        )}
-      </button>
-    </div>
-  );
-};
 
-const Images = ({ selected } : { selected: string; }) => {
+const Images = () => {
   return (
     <div className="bg-white relative overflow-hidden w-full min-h-[100px]">
       <motion.div
         initial={false}
-        animate={{
-          x: selected === "individual" ? "0%" : "100%",
-        }}
         transition={BASE_TRANSITION}
         className="absolute inset-0 bg-slate-200"
         style={{
@@ -171,9 +187,6 @@ const Images = ({ selected } : { selected: string; }) => {
       />
       <motion.div
         initial={false}
-        animate={{
-          x: selected === "booking" ? "0%" : "-100%",
-        }}
         transition={BASE_TRANSITION}
         className="absolute inset-0 bg-slate-200"
         style={{

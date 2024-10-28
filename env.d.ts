@@ -14,6 +14,7 @@ namespace NodeJS {
         NEXT_APPWRITE_COLLECTION_EMAILS_ID: string;
         NEXT_APPWRITE_COLLECTION_RATING: string;
         NEXT_APPWRITE_COLLECTION_MENU_ID: string;
+        NEXT_APPWRITE_COLLECTION_BOOKING_ID: string;
       // Add other variables as needed
       API_URL?: string; // Optional because it won't always exist
     }

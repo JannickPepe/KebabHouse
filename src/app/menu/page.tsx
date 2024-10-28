@@ -20,8 +20,6 @@ export default function Menu() {
 
               <PdfViewerComponent />
             </div>
-
-          
           </div>
     
           <div className="grid grid-cols-1 md:grid-cols-2 py-6 mt-4 md:mt-6 gap-4 md:gap-8 max-w-6xl mx-auto px-6 md:px-0">
