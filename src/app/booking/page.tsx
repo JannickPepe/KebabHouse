@@ -35,6 +35,8 @@ const Form = () => {
   const [fullName, setFullName] = useState('');
   const [bookingName, setBookingName] = useState('');
   const [bookingDate, setBookingDate] = useState('');
+  const [guestNumber, setGuestNumber] = useState<number | ''>('');
+  const [hoursNumber, setHoursNumber] = useState<number | ''>('');
   const [question, setQuestion] = useState('');
   const [confirmationMessage, setConfirmationMessage] = useState('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -51,6 +53,8 @@ const Form = () => {
                   fullName,
                   bookingName,
                   bookingDate,
+                  guestNumber,
+                  hoursNumber,
                   question,
               }
           );
@@ -61,6 +65,8 @@ const Form = () => {
             setFullName('');
             setBookingName('');
             setBookingDate('');
+            setGuestNumber('');
+            setHoursNumber('');
             setQuestion('');
 
             // Clear any existing timeout
@@ -108,51 +114,82 @@ const Form = () => {
 
       {/* booking name */}
       <AnimatePresence>
-          <motion.div
-            initial={{
-              marginTop: -104,
-              opacity: 0,
-            }}
-            animate={{
-              marginTop: 0,
-              opacity: 1,
-            }}
-            exit={{
-              marginTop: -104,
-              opacity: 0,
-            }}
-            transition={BASE_TRANSITION}
-            className="mb-6"
-          >
-            <p className="text-2xl mb-2">I hvems navn</p>
-            <input
-              type="text"
-              placeholder="Dit booking navn..."
-              value={bookingName}
-              onChange={(e) => setBookingName(e.target.value)}
-              required
-              className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
-            />
+        <motion.div
+          initial={{
+            marginTop: -104,
+            opacity: 0,
+          }}
+          animate={{
+            marginTop: 0,
+            opacity: 1,
+          }}
+          exit={{
+            marginTop: -104,
+            opacity: 0,
+          }}
+          transition={BASE_TRANSITION}
+          className="mb-6"
+        >
+          <p className="text-2xl mb-2">I hvems navn</p>
+          <input
+            type="text"
+            placeholder="Dit booking navn..."
+            value={bookingName}
+            onChange={(e) => setBookingName(e.target.value)}
+            required
+            className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
+          />
 
-            <div className="my-4">
-              <label className="text-2xl">Booking Dato</label>
-              <input
-                type="datetime-local"
-                value={bookingDate}
-                onChange={(e) => setBookingDate(e.target.value)}
-                required
-                className="mt-1 block w-full px-3 py-2 border text-red-500 border-gray-300 rounded-md"
-              />
-            </div>
-          </motion.div>
-  
+          <div className="my-4">
+            <label className="text-2xl">Booking Dato</label>
+            <input
+              type="datetime-local"
+              value={bookingDate}
+              onChange={(e) => setBookingDate(e.target.value)}
+              required
+              className="mt-1 block w-full px-3 py-2 border text-red-500 border-gray-300 rounded-md"
+            />
+          </div>
+        </motion.div>
       </AnimatePresence>
+
+      <div className="flex gap-10 mb-4">
+        {/* Number of Guests Field */}
+        <div className="">
+          <label className="block text-lg font-semibold">Antal gæster</label>
+          <input
+            type="number"
+            placeholder="Max 20"
+            value={guestNumber}
+            onChange={(e) => setGuestNumber(Number(e.target.value))}
+            required
+            min={1}
+            max={20} // Adjust maximum as needed
+            className="mt-1 block w-full px-3 py-2 border text-black border-gray-300 rounded-md"
+          />
+        </div>
+
+        {/* Number of Hours Field */}
+        <div className="">
+          <label className="block text-lg font-semibold">Antal timer</label>
+          <input
+            type="number"
+            placeholder="Max 5"
+            value={hoursNumber}
+            onChange={(e) => setHoursNumber(Number(e.target.value))}
+            required
+            min={1}
+            max={5} // Adjust maximum as needed
+            className="mt-1 block w-full px-3 py-2 text-black border border-gray-300 rounded-md"
+          />
+        </div>
+      </div>
 
       {/* Info */}
       <div className="mb-6">
         <p className="text-2xl mb-2">Bemærkninger</p>
         <textarea
-          placeholder="Skriv venligst antal gæster :)"
+          placeholder="Har du ydre bemærkninger? vh Cafe & Kebab House"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           className={`transition-colors duration-[750ms] min-h-[150px] text-black resize-none p-2 rounded-md w-full focus:outline-0`}

@@ -26,7 +26,7 @@ export const TopFive = () => {
                 <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">Vores <span className="text-green-600">Top 5</span> af vores bedste <span className="text-green-600">pizza&apos;er</span></h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 mx-auto md:px-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-0 mt-4 md:mt-10 mx-auto md:px-20">
                 {pizzas.map((pizza, topFiveIndex) => {
                     return (
                         <motion.div 

@@ -112,7 +112,7 @@ export default function ShowMenu() {
 
             {/* Menu Items */}
             <section>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-10 md:px-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-10 md:px-6 lg:px-0">
                     {menuItems.length > 0 ? (
                         menuItems.map((item, index) => (
                             <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md text-center">

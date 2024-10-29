@@ -7,6 +7,7 @@ import Image from "next/image";
 import { GlobalButton } from "@/components/GlobalButton";
 import GlobalReadMore from "@/components/GlobalReadMore";
 import Link from "next/link";
+import { StatsCounter } from "./StatsCounter";
 
 
 const AboutContent = () => {
@@ -38,7 +39,7 @@ const Copy = () => {
 
     return (
         <>
-            <div className="flex h-fit w-full flex-col justify-center md:sticky md:top-0 md:h-[100vh]">
+            <div className="flex h-fit w-full flex-col justify-center md:sticky md:top-0 md:h-[86vh] lg:h-[106vh]">
                 <p className="uppercase text-xs text-black dark:text-zinc-400 font-bold ml-1 border-2 border-green-600 rounded-xl mx-auto px-4 py-1 mt-4 mb-1 md:mb-0 md:mt-0">
                     Om os
                 </p>
@@ -49,17 +50,15 @@ const Copy = () => {
                     <GlobalReadMore text={longText} maxLength={300} className="text-green-600" />
                 </div>
 
-                <a href="/booking" className="text-base text-slate-700 dark:text-zinc-400 underline mt-4 hover:text-black dark:hover:text-white hover:scale-105 transition font-bold">
-                    Har du besøgt Cafe & Kebab House før?
-                </a>
-
-                <div className="flex mt-8">
+                <div className="flex mt-6">
                     <Link href={'/menu'}>
                         <GlobalButton className="text-black dark:text-white">
                             Menukort
                         </GlobalButton>
                     </Link>
                 </div>
+
+                <StatsCounter />
             </div>
         </>
     );
