@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import footerImg from "../assets/icons/kebab.png";
+import footerImg from "../../assets/icons/kebab.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { RiMapPinLine } from "react-icons/ri";
 import { BsTelephoneInbound } from "react-icons/bs";
-import FooterModal from "./FooterModal";
+import FooterModal from "@/components/FooterModal";
+
 
 
 const Footer = () => {
@@ -56,6 +57,10 @@ const Footer = () => {
                                 <li className="flex justify-center items-center mr-10 group">
                                     <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
                                     <a href="/about" className="hover:underline">Om Os</a>
+                                </li>
+                                <li className="flex justify-center items-center ml-10 group">
+                                    <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
+                                    <a href="/allfood" className="hover:underline">Vores Udvalg</a>
                                 </li>
                                 <li className="flex justify-center items-center mr-4 group">
                                     <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>

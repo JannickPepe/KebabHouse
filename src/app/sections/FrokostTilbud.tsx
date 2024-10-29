@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiChevronLeft,FiChevronRight } from "react-icons/fi";
+import { FiAlertCircle, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import tilbudOne from '../../assets/icons/shawarma.png';
 import tilbudTwo from '../../assets/icons/pita.png';
 import tilbudThree from '../../assets/icons/pizza.png';
 import tilbudfour from '../../assets/icons/kebabbox.png';
 import Image, { StaticImageData } from "next/image";
-import menuCardIcon from "@/assets/icons/menucard.png"
 
 
 const FrokostTilbud = () => {
@@ -34,7 +33,7 @@ const FrokostTilbud = () => {
                         <h3><span className="underline">
                             Frokosttilbud Gælder</span> alle ugens dage fra kl. <span className="text-red-600">11.00 - 15.00</span>
                         </h3>
-                        <h3><span className="underline">Gælder Ikke</span> ved udbringning!</h3>
+                        <h3>Gælder <span className="underline text-red-600">Ikke</span> ved udbringning!</h3>
                     </div>
                     <div className="flex gap-2">
                         <button
@@ -81,7 +80,7 @@ const Feature = ({ position, index, title, description, image } : { position: nu
                 Med Friske og nye råvarer og grønt 
             </p>
             <p className="flex items-start md:items-center gap-1 text-sm font-medium">
-                <Image src={menuCardIcon} alt="kebab house icon" className="size-4" />
+                <FiAlertCircle className="text-zinc-300 size-4" />
                 <span >{description}</span>
             </p>
         </motion.div>

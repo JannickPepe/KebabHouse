@@ -134,7 +134,7 @@ export default function ShowMenu() {
                 </div>
 
                 <div className='flex justify-center items-center mt-12 gap-6 space-y-6 md:space-y-0'>
-                    <button onClick={handleClick} className='text-zinc-300 text-lg md:text-xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
+                    <button onClick={handleClick} className='text-zinc-700 dark:text-zinc-300 text-lg md:text-xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
                         Se hele <span className='text-green-500 group-hover:text-red-500'>udvalget</span>
                     </button>
                 </div>

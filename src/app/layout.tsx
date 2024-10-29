@@ -5,7 +5,7 @@ import { Inter, Calistoga } from 'next/font/google';
 import { twMerge } from "tailwind-merge";
 import  Navbar from "../components/Navbar"
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "../app/sections/Footer";
 
 
 const inter = Inter({subsets: ['latin'], variable: "--font-sans"});
