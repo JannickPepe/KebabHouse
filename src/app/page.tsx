@@ -1,12 +1,11 @@
 import ShowUseMenu from "@/app/sections/ShowUseMenu";
 import FrokostTilbud  from "./sections/FrokostTilbud";
 import HeroLanding from "./sections/Hero";
-import Ratings from "./sections/Ratings";
 import { Stemning } from "./sections/Stemning";
-import { TopFive } from "./sections/TopFive";
 import Contact from "./sections/UserQuestion";
 import { Analytics } from "@vercel/analytics/react";
 import SideNavbar from "@/components/SideNavbar";
+import { Values } from "./sections/Values";
 
 
 export default function Home() {
@@ -30,7 +29,7 @@ export default function Home() {
 
         {/* TOP 5 PIZZA */}
         <section id="pizza">
-          <TopFive />
+          <Values />
         </section>
 
         {/* FROKOST TILBUD */}
@@ -44,9 +43,12 @@ export default function Home() {
         </section>
 
         {/* RATING  */}
+        {/*
         <section id="rating">
           <Ratings />
         </section>
+         */}
+    
 
         {/* KONTAKT */}
         <section id="contact">

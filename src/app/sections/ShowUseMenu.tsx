@@ -54,7 +54,7 @@ export default function ShowMenu() {
     };
 
     return (
-        <main className="py-10 md:py-16 lg:py-24">
+        <main className="py-10 md:py-24 lg:py-28">
             <div className=" text-center">
                 <p className="block text-slate-600 dark:text-zinc-400 text-xs font-bold uppercase">Menu oversigt</p>
                 <h2 className="text-black dark:text-white text-lg md:text-4xl lg:text-5xl">

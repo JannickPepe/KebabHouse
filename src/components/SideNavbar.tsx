@@ -14,7 +14,7 @@ const SideNavbar: React.FC = () => {
     useEffect(() => {
         const handleScroll = () => {
             // Show sidebar when scrolled down
-            if (window.scrollY > 800) {
+            if (window.scrollY > 700) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
