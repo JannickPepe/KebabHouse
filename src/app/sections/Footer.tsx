@@ -11,7 +11,7 @@ import FooterModal from "@/components/FooterModal";
 
 const Footer = () => {
     return (
-        <footer className="relative z-0 overflow-x-clip pt-2 md:pt-8 lg:pt-24 pb-6 text-center bg-zinc-200 dark:bg-zinc-900">
+        <footer className="relative z-0 overflow-x-clip pt-8 lg:pt-16 pb-6 text-center bg-zinc-200 dark:bg-zinc-900">
             <div className='absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10'></div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -52,22 +52,22 @@ const Footer = () => {
                         <h3 className="text-gradient text-lg md:text-2xl lg:text-3xl font-semibold uppercase text-zinc-400">
                             Links
                         </h3>
-                        <div className="mt-4 justify-center flex text-sm md:text-base lg:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
-                            <ul className="flex md:block md:space-y-4 tracking-wider">
+                        <div className="mt-4 flex justify-center text-sm md:text-base lg:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
+                            <ul className="md:space-y-4 tracking-wider">
                                 <li className="flex justify-center items-center mr-10 group">
-                                    <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
+                                    <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/about" className="hover:underline">Om Os</a>
                                 </li>
-                                <li className="flex justify-center items-center ml-10 group">
-                                    <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
+                                <li className="flex justify-center items-center ml-5 md:ml-7 lg:ml-10 group">
+                                    <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/allfood" className="hover:underline">Vores Udvalg</a>
                                 </li>
                                 <li className="flex justify-center items-center mr-4 group">
-                                    <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
+                                    <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/booking" className="hover:underline">Booking</a>
                                 </li>
                                 <li className="flex justify-center items-center mr-4 group">
-                                    <MdOutlineKeyboardArrowRight className="size-8 group-hover:text-green-500"/>
+                                    <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/contact" className="hover:underline">Kontakt</a>
                                 </li>
                             </ul>

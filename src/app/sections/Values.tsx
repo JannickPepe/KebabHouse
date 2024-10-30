@@ -51,11 +51,11 @@ export const Values = () => {
 
                 <div className='relative md:flex text-black justify-center items-center gap-6 mt-6 text-center'>
                     <div className='absolute bg-green-600 p-1 rounded-full translate-y-0 -translate-x-44 hidden md:block'></div>
-                    <p className='font-bold'>
+                    <p className='font-bold text-zinc-700 dark:text-zinc-400'>
                         (+45)43527271
                     </p>
                     <div className='absolute bg-green-600 p-1 rounded-full translate-y-0 -translate-x-9 hidden md:block'></div>
-                    <p className='font-bold'>
+                    <p className='font-bold text-zinc-700 dark:text-zinc-400'>
                         info@cafekebabhouse.dk
                     </p>
                     <div className='absolute bg-green-600 p-1 rounded-full translate-y-0 translate-x-44 hidden md:block'></div>

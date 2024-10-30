@@ -51,10 +51,10 @@ export const Stemning = () => {
 
 
     return (
-        <section className="lg:flex lg:justify-center gap-8 lg:gap-12 py-10 md:py-24 lg:py-28">
+        <section className="lg:flex lg:justify-center gap-8 lg:gap-12 py-10 md:py-24">
             <div className="flex justify-center items-center">
                 {imageUrl ? (
-                    <motion.img className="h-96 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden md:block" src={imageUrl} alt="Cafe & Kebab House hygge billed" />
+                    <motion.img className="h-96 w-72 rounded-lg transition-all duration-300 hover:scale-110 hidden lg:block" src={imageUrl} alt="Cafe & Kebab House hygge billed" />
                 ) : (
                     <p>Loading image...</p>
                 )}
@@ -69,10 +69,10 @@ export const Stemning = () => {
                     <p className="block dark:text-zinc-400 text-red-500 text-xs uppercase font-bold">
                         Har du husket appetiten?
                     </p>
-                    <h2 className="text-xl md:text-4xl text-black dark:text-zinc-300">
+                    <h2 className="text-2xl md:text-4xl text-black dark:text-zinc-300">
                         Hos <span className="text-green-600">Cafe</span> & Kebab House har vi altid den bedste <span className="text-green-600">stemning!</span>
                     </h2>
-                    <p className="mt-3 md:mt-6 text-black dark:text-zinc-400">
+                    <p className="mt-3 md:mt-6 text-black dark:text-zinc-400 text-lg font-semibold max-w-96 mx-auto">
                         Se vores varieret menu, hvor gode friske råvare altid er i prioritet
                     </p>
                 </div>

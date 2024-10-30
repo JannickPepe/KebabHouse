@@ -27,7 +27,7 @@ export default function Home() {
           <ShowUseMenu />
         </section>
 
-        {/* TOP 5 PIZZA */}
+        {/* VÆRDIER */}
         <section id="pizza">
           <Values />
         </section>
@@ -41,14 +41,6 @@ export default function Home() {
         <section id="stemning">
           <Stemning />
         </section>
-
-        {/* RATING  */}
-        {/*
-        <section id="rating">
-          <Ratings />
-        </section>
-         */}
-    
 
         {/* KONTAKT */}
         <section id="contact">

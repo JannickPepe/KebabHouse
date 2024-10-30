@@ -11,11 +11,13 @@ import steakIcon from "@/assets/icons/steak.png";
 import durumIcon from "@/assets/icons/shawarma.png";
 import Tooltip from '@/components/ToolTip';
 import { useRouter } from 'next/navigation';
+import { Query } from 'appwrite';
 
 export default function ShowMenu() {
 
     const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
     const [activeCollection, setActiveCollection] = useState<'pizza' | 'burger' | 'pitabread' | 'durum' | 'wholemenus'>('pizza');
+    const [showMoreButton, setShowMoreButton] = useState(false);
 
     const router = useRouter();
 
@@ -26,8 +28,16 @@ export default function ShowMenu() {
     // Fetch collection data based on the activeCollection
     const fetchCollection = async (collectionId: string) => {
         try {
-            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID, collectionId);
+            const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID, collectionId,
+                [
+                    Query.limit(8), // Limit the results to 8 documents
+                    Query.orderDesc('$createdAt') // Sort by creation date in descending order
+                ]
+            );
             setMenuItems(response.documents as unknown as MenuItem[]);
+
+            // Check if the collection has more than 8 items
+            setShowMoreButton(response.documents.length > 7);
 
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -133,11 +143,14 @@ export default function ShowMenu() {
                     )}
                 </div>
 
-                <div className='flex justify-center items-center mt-12 gap-6 space-y-6 md:space-y-0'>
-                    <button onClick={handleClick} className='text-zinc-700 dark:text-zinc-300 text-lg md:text-xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
-                        Se hele <span className='text-green-500 group-hover:text-red-500'>udvalget</span>
-                    </button>
-                </div>
+
+                {showMoreButton && (
+                    <div className='flex justify-center items-center mt-12 gap-6 space-y-6 md:space-y-0'>
+                        <button onClick={handleClick} className='text-zinc-700 dark:text-zinc-300 text-lg md:text-xl font-semibold outline outline-offset-1 outline-zinc-400 px-3 py-1 rounded-xl hover:outline-none group transition-all'>
+                            Se hele <span className='text-green-500 group-hover:text-red-500'>udvalget</span>
+                        </button>
+                    </div>
+                )}
                 
             </section>
         
