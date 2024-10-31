@@ -30,14 +30,14 @@ export default function ShowMenu() {
         try {
             const response = await databases.listDocuments( process.env.NEXT_APPWRITE_DATABASE_ID, collectionId,
                 [
-                    Query.limit(8), // Limit the results to 8 documents
+                    Query.limit(6), // Limit the results to 6 documents
                     Query.orderDesc('$createdAt') // Sort by creation date in descending order
                 ]
             );
             setMenuItems(response.documents as unknown as MenuItem[]);
 
             // Check if the collection has more than 8 items
-            setShowMoreButton(response.documents.length > 7);
+            setShowMoreButton(response.documents.length > 5);
 
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -122,7 +122,7 @@ export default function ShowMenu() {
 
             {/* Menu Items */}
             <section>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-10 md:px-6 lg:px-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto px-10 md:px-6 lg:px-0">
                     {menuItems.length > 0 ? (
                         menuItems.map((item, index) => (
                             <div key={index} className="border border-green-500 rounded-lg p-4 shadow-md text-center">

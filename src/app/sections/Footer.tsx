@@ -53,14 +53,14 @@ const Footer = () => {
                             Links
                         </h3>
                         <div className="mt-4 flex justify-center text-sm md:text-base lg:text-lg text-zinc-400 md:text-zinc-500 font-normal md:font-bold uppercase">
-                            <ul className="md:space-y-4 tracking-wider">
-                                <li className="flex justify-center items-center mr-10 group">
+                            <ul className="space-y-2 md:space-y-4 tracking-wider">
+                                <li className="flex justify-center items-center mr-9 md:mr-10 group">
                                     <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/about" className="hover:underline">Om Os</a>
                                 </li>
-                                <li className="flex justify-center items-center ml-5 md:ml-7 lg:ml-10 group">
+                                <li className="flex justify-center items-center mr-7 group">
                                     <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
-                                    <a href="/allfood" className="hover:underline">Vores Udvalg</a>
+                                    <a href="/allfood" className="hover:underline">Udvalg</a>
                                 </li>
                                 <li className="flex justify-center items-center mr-4 group">
                                     <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
@@ -69,6 +69,10 @@ const Footer = () => {
                                 <li className="flex justify-center items-center mr-4 group">
                                     <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
                                     <a href="/contact" className="hover:underline">Kontakt</a>
+                                </li>
+                                <li className="flex justify-center items-center mr-8 group">
+                                    <MdOutlineKeyboardArrowRight className="size-6 md:size-8 group-hover:text-green-500"/>
+                                    <a href="/rating" className="hover:underline">Rating</a>
                                 </li>
                             </ul>
                         </div>
