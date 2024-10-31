@@ -2,7 +2,8 @@
 
 import FAQ from "@/components/FAQ";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { useState } from 'react';
+import { databases } from '../../lib/appwrite';
 
 const Contact = () => {
 
@@ -30,9 +31,44 @@ const Contact = () => {
 };
 
 const Form = () => {
+
+  const [name, setName] = useState('');
+  const [mail, setEmail] = useState('');
+  const [question, setQuestion] = useState('');
+
+  const [message, setMessage] = useState(''); // Show a confirmation message when email send
+  const [isFormValid, setIsFormValid] = useState(false); // disable submit button as default
+  
+  const handleInputChange = () => {
+      // Check if all fields are filled
+      if (name && mail && question) {
+          setIsFormValid(true);
+      } else {
+          setIsFormValid(false);
+      }
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    try {
+        await databases.createDocument(process.env.NEXT_APPWRITE_DATABASE_ID, process.env.NEXT_APPWRITE_COLLECTION_EMAILS_ID, 'unique()', { name, mail, question });
+        setMessage('Beskeden er nu sendt!');
+        setTimeout(() => setMessage(''), 2000);
+    } catch (error) {
+        console.error('Error submitting email:', error);
+    };
+
+    // Clear the input fields after successful submission
+    setName('');
+    setEmail('');
+    setQuestion('');
+    setIsFormValid(false);
+};
+
+
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
       className={`p-8 w-full text-white transition-colors duration-[750ms] bg-green-700 `}
     >
       <h3 className="text-4xl font-bold mb-6 uppercase">
@@ -45,6 +81,11 @@ const Form = () => {
         <input
           type="text"
           placeholder="Mit navn..."
+          value={name}
+          onChange={(e) => { 
+            setName(e.target.value);
+            handleInputChange(); 
+            }} 
           className={`transition-colors duration-[750ms] placeholder-white/70 p-2 bg-green-600 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -71,6 +112,11 @@ const Form = () => {
           <input
             type="text"
             placeholder="john@live.dk"
+            value={mail}
+            onChange={(e) => { 
+              setEmail(e.target.value);
+              handleInputChange(); 
+            }} 
             className={`transition-colors duration-[750ms] placeholder-white/70 p-2 bg-green-600 rounded-md w-full focus:outline-0`}
           />
         </motion.div>
@@ -81,6 +127,11 @@ const Form = () => {
         <p className="text-2xl mb-2">Spørgsmål eller kommentar</p>
         <textarea
           placeholder="Din mening betyder meget, vh. Cafe & Kebab House :)"
+          value={question} 
+          onChange={(e) => { 
+            setQuestion(e.target.value);
+            handleInputChange(); 
+          }} 
           className={`transition-colors duration-[750ms] min-h-[150px] bg-green-600 resize-none placeholder-white/70 p-2 rounded-md w-full focus:outline-0`}
         />
       </div>
@@ -94,10 +145,18 @@ const Form = () => {
           scale: 0.99,
         }}
         type="submit"
-        className={` transition-colors duration-[750ms] bg-white text-green-600 text-lg text-center rounded-lg w-full py-3 font-semibold`}
+        className={` transition-colors duration-[750ms] text-lg text-center rounded-lg w-full py-3 font-semibold`}
+        disabled={!isFormValid}
+        style={{
+          backgroundColor: isFormValid ? 'white' : 'gray',
+          color: isFormValid? '#16a34a' : 'white',
+          opacity: isFormValid? '100%' : '30%',
+          cursor: isFormValid ? 'pointer' : 'not-allowed',
+        }}
       >
         Send
       </motion.button>
+      {message && <p className='text-center mt-2 text-green-600 text-xl'>{message}</p>}
     </form>
   );
 };

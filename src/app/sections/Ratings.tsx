@@ -24,7 +24,7 @@ const Ratings = () => {
                     process.env.NEXT_APPWRITE_DATABASE_ID, 
                     process.env.NEXT_APPWRITE_COLLECTION_RATING,
                     [
-                        Query.limit(12), // Limit the results to 5 documents
+                        Query.limit(10), // Limit the results to 10 documents
                         Query.orderDesc('$createdAt') // Sort by creation date in descending order
                     ]
                 );
@@ -59,9 +59,9 @@ const Ratings = () => {
                 <Rating />
             </div>
 
-            <h4 className='text-center mt-6 text-green-600'>De nyeste ratings fra vores kunder</h4>
+            <h4 className='text-center mt-6 lg:mt-10 text-green-600'>De nyeste ratings fra vores kunder</h4>
             <div className='flex justify-center items-center mt-6'>
-                <ul className='grid grid-cols-3 md:grid-cols-6 gap-4 mx-auto'>
+                <ul className='grid grid-cols-3 md:grid-cols-5 gap-4 mx-auto'>
                     {ratings.map((rate, index) => (
                         <li className='flex items-center gap-1 border border-zinc-800 dark:border dark:border-zinc-300 px-3 py-3 rounded-full hover:scale-105 transition hover:shadow-md hover:shadow-amber-600' key={index}>
                             <span className='text-zinc-800 dark:text-zinc-400'>
