@@ -2,14 +2,16 @@
 
 import { databases } from "@/lib/appwrite";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useRef, useState } from "react";
+import { FaStar } from "react-icons/fa6";
 
 const Booking = () => {
   
 
   return (
     <>
-      <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-40 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
+      <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-24 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
         <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
           <Form  />
           <div className="relative overflow-hidden w-full min-h-[100px]">
@@ -25,6 +27,15 @@ const Booking = () => {
             />
           </div>
         </div>
+
+        <h2 className="text-xl md:text-3xl lg:text-4xl text-center mt-12 text-zinc-800 dark:text-zinc-300">
+          Giv en <span className="text-green-600">rating</span> efter jeres <span className="text-green-600">booking</span>
+        </h2>
+        <Link href={'/rating'} className="flex justify-center items-center mt-4 text-lg font-semibold gap-2">
+          <FaStar className="text-orange-400" /><FaStar className="text-orange-400" /><FaStar className="text-orange-400" /> 
+          <span className="px-2 text-zinc-800 dark:text-zinc-300 border-2 border-green-600 rounded-lg hover:border-none transition-transform">Gå til Rating</span> 
+          <FaStar className="text-orange-400" /><FaStar className="text-orange-400" /><FaStar className="text-orange-400" />
+        </Link>
       </section>
     </>
   );
