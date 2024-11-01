@@ -6,6 +6,7 @@ import Contact from "./sections/UserQuestion";
 import { Analytics } from "@vercel/analytics/react";
 import SideNavbar from "@/components/SideNavbar";
 import { Values } from "./sections/Values";
+import LandingMessage from "@/components/LandingMessage";
 
 
 export default function Home() {
@@ -16,7 +17,8 @@ export default function Home() {
       <main className="container mx-auto bg-zinc-200 dark:bg-slate-900">
 
         <SideNavbar />
-
+        <LandingMessage />
+      
         {/* LANDING */}
         <section id="landing">
           <HeroLanding />

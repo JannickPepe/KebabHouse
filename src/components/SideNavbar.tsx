@@ -6,7 +6,6 @@ import Image from 'next/image';
 import menukortIcon from '@/assets/icons/menukort.svg';
 import bookingIcon from '@/assets/icons/booking.svg';
 import searchIcon from '@/assets/icons/search.svg';
-import starIcon from '@/assets/icons/star.png';
 
 
 const SideNavbar: React.FC = () => {
@@ -52,11 +51,6 @@ const SideNavbar: React.FC = () => {
                     </a>
                 </li>
 
-                <li className='hover:scale-110 transition'>
-                    <a href="/rating" className="transition-colors">
-                        <Image src={starIcon} alt='menukort ikon' className='size-9 bg-green-600 rounded-full p-1 hover:bg-white' />
-                    </a>
-                </li>
             </ul>
         </motion.div>
     );

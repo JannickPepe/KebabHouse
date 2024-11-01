@@ -20,7 +20,6 @@ export const Stemning = () => {
             try {
                 // Replace 'your-bucket-id' and 'your-file-id' with the actual values
                 const dinertableOneId = '671bf413003c02091030';
-                // You can use getFilePreview or getFileView depending on your needs
                 const url = storage.getFilePreview(process.env.NEXT_APPWRITE_STORAGE_ID, dinertableOneId).toString();
                 setImageUrl(url);
         
