@@ -27,7 +27,7 @@ const LandingMessage = () => {
 
     return (
         <div>
-            <TimedMessage duration={3000} backgroundImageUrl={imageUrl}>
+            <TimedMessage duration={30000} backgroundImageUrl={imageUrl}>
                 <h3 className="text-xl md:text-2xl font-bold tracking-wide">Tak, for at besøge vores hjemmeside👋</h3>
                 <p className="my-2 text-lg">
                     Her kan du lave {" "}
