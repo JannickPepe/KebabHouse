@@ -26,6 +26,12 @@ body {
   }
 }
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
 html {
   scroll-behavior: smooth;
 }

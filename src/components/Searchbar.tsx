@@ -72,25 +72,25 @@ const SearchBar: React.FC = () => {
         <section>
             <div className='flex items-center justify-center max-w-xs mx-auto'>
                 <form onSubmit={handleSearch} ref={formRef} className="flex items-center justify-center">
-                    <button
-                        onClick={handleSearch}
-                        className="px-4 py-2 bg-emerald-500 text-zinc-800 hover:bg-green-600 group"
-                        style={{borderTopLeftRadius: 10, borderBottomLeftRadius: 10}}
-                    >
-                        <IoSearchOutline className='size-6 group-hover:text-zinc-200' />
-                    </button>
                     <input
                         type="text"
                         placeholder="Skriv en titel..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-1/2 md:w-3/4 px-2 py-2 text-zinc-800 focus:shadow-md focus:shadow-green-500 focus:outline-none"
-                        style={{borderTopRightRadius: 10, borderBottomRightRadius: 10}}
+                        style={{borderTopLeftRadius: 10, borderBottomLeftRadius: 10}}
                     />
+                    <button
+                        onClick={handleSearch}
+                        className="px-4 py-2 bg-emerald-500 text-zinc-800 hover:bg-green-600 group"
+                        style={{borderTopRightRadius: 10, borderBottomRightRadius: 10}}
+                    >
+                        <IoSearchOutline className='size-6 group-hover:text-zinc-200' />
+                    </button>
                 </form>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-4 mb-8 md:mb-14">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-4">
                 {results.length > 0 ? (
                     results.map((item, index) => (
                         <div key={index} className="py-4 border-b border-green-600">

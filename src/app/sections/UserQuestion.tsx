@@ -40,10 +40,11 @@ const Contact = () => {
     };
 
     return (
-        <section className='py-10 lg:py-20 z-0'>
-            <div className="font-[sans-serif] max-w-4xl mx-auto relative rounded-lg py-6 z-0">
+        <section className='py-10 lg:py-16 z-0'>
+
+            <div className="font-[sans-serif] max-w-2xl mx-auto relative py-6 px-4 md:px-0 z-0">
                 <div className="grid lg:grid-cols-1 items-center">
-                    <div className="lg:col-span-2 md:max-w-lg lg:max-w-full md:mx-auto lg:mx-0 md:border border-green-700 opacity-90 rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">
+                    <div className="mx-auto [background:linear-gradient(45deg,#172033,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.green.500)_86%,_theme(colors.green.300)_90%,_theme(colors.green.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-2xl border w-full border-transparent animate-border sm:p-10 p-4 z-10 max-lg:mb-8">
                         <h3 className="text-gradient text-3xl text-center font-bold uppercase text-black dark:text-zinc-400">
                             Kontakt os
                         </h3>
@@ -84,7 +85,7 @@ const Contact = () => {
                             </textarea>
                             <button 
                                 type='submit'
-                                className="w-full relative font-semibold rounded-lg text-sm px-6 py-3 !mt-6"
+                                className="w-full relative font-semibold rounded-lg text-sm px-6 py-3"
                                 disabled={!isFormValid}
                                 style={{
                                     backgroundColor: isFormValid ? 'white' : 'gray',

@@ -9,6 +9,9 @@ import durumIcon from "@/assets/icons/shawarma.png";
 import PagiBurger from '@/components/PagiBurger';
 import PagiPizza from '@/components/PagiPizza';
 import SearchBar from '@/components/Searchbar';
+import PagiPitabread from "@/components/PagiPitabread";
+import PagiDurum from "@/components/PagiDurum";
+import PagiWholeMenus from "@/components/PagiWholeMenus";
 
 
 
@@ -49,28 +52,28 @@ const AllFood: React.FC = () => {
             <SearchBar />
     
             {/* PIZZA */}
-            <section id="pizza" className=''>
+            <section id="pizza" className='py-6'>
                 <PagiPizza />
             </section>
 
             {/* BURGER */}
-            <section id="burger" className=''>
+            <section id="burger" className='py-6'>
                 <PagiBurger />
             </section>
 
             {/* PITABREAD */}
-            <section>
-
+            <section id="pitabread" className='py-6'>
+                <PagiPitabread />
             </section>
 
             {/* DURUM */}
-            <section>
-
+            <section id="durums" className='py-6'>
+                <PagiDurum />
             </section>
 
             {/* MENUS */}
-            <section>
-
+            <section id="menus" className="py-6">
+                <PagiWholeMenus />
             </section>
 
         </main>
