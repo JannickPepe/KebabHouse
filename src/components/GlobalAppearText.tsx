@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
 import { useEffect, useState, ReactNode } from 'react';
 
 interface TimedMessageProps {
   children: ReactNode; // Accept any content as children
   duration: number; // Duration in milliseconds
-  backgroundImageUrl?: ReactNode; // New prop for background image URL
+  backgroundImageUrl?: ReactNode; // Background image URL
 }
 
 const TimedMessage: React.FC<TimedMessageProps> = ({ children, duration, backgroundImageUrl }) => {
@@ -13,19 +13,20 @@ const TimedMessage: React.FC<TimedMessageProps> = ({ children, duration, backgro
 
     useEffect(() => {
         // Check if the message has already been closed
-        const isClosed = sessionStorage.getItem('timedMessageClosed');
+        const isClosed = localStorage.getItem('timedMessageClosed');
 
         if (!isClosed) {
             const timer = setTimeout(() => {
                 setShowMessage(true);
             }, duration);
+            
             return () => clearTimeout(timer);
         }
     }, [duration]);
-    
+
     const handleClose = () => {
         setShowMessage(false);
-        sessionStorage.setItem('timedMessageClosed', 'true'); // Remember the close action
+        localStorage.setItem('timedMessageClosed', 'true'); // Remember the close action
     };
 
     return (
@@ -39,14 +40,14 @@ const TimedMessage: React.FC<TimedMessageProps> = ({ children, duration, backgro
                         }}
                     >
                         <div className="absolute inset-0 bg-black opacity-50 rounded-md" />
-                        <div className="relative z-10">
-                        {children}
-                        <button
-                            onClick={handleClose}
-                            className="mt-4 px-3 py-1.5 bg-emerald-600 text-zinc-200 rounded-full hover:bg-green-600 font-semibold"
-                        >
-                            Luk
-                        </button>
+                            <div className="relative z-10">
+                                {children}
+                            <button
+                                onClick={handleClose}
+                                className="mt-4 px-3 py-1.5 bg-emerald-600 text-zinc-200 rounded-full hover:bg-green-600 font-semibold"
+                            >
+                                Luk
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { RiMapPinLine } from "react-icons/ri";
 import { BsTelephoneInbound } from "react-icons/bs";
 import FooterModal from "@/components/FooterModal";
+import Link from "next/link";
 
 
 
@@ -25,14 +26,14 @@ const Footer = () => {
                         </p>
                         <div className="max-w-[220px] mx-auto my-2 md:my-3 bg-slate-900 dark:bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] py-0.5 rounded-full"/>
                     
-                        <p className="flex justify-center items-top gap-3 pb-2 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
+                        <div className="flex justify-center items-top gap-3 pb-2 text-base md:text-base lg:text-lg text-zinc-500 font-bold">
                             <BsTelephoneInbound className="size-6 mt-0.5 text-zinc-700 dark:text-zinc-400" />
-                            +45 43 52 72 71
-                        </p>
-                        <p className="flex justify-center items-top gap-3 text-zinc-500 text-base md:text-base lg:text-lg underline font-bold">
+                            <Link href="tel:+4543527271" className="underline hover:text-white transition-colors">+45 43 52 72 71</Link>
+                        </div>
+                        <div className="flex justify-center items-top gap-3 text-zinc-500 text-base md:text-base lg:text-lg underline font-bold">
                             <IoMailOutline className="size-6 mt-0.5 text-zinc-700 dark:text-zinc-400" />
-                            info@cafekebabhouse.dk
-                        </p>
+                            <Link href="mailto:info@cafekebabhouse.dk" className="hover:text-white transition-colors">info@cafekebabhouse.dk</Link>
+                        </div>
                     </div>
 
                     <div className="text-lg md:text-2xl lg:text-3xl font-semibold text-zinc-400 mt-6 md:mt-0 lg:mt-0">
