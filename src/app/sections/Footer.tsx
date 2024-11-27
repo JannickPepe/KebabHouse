@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className="text-lg md:text-2xl lg:text-3xl font-semibold text-zinc-400 mt-6 md:mt-0 lg:mt-0">
                         <div className="text-gradient flex justify-center items-center gap-4 uppercase">
                             Cafe & Kebab House  
-                            <Image src={footerImg} className="h-8 w-8 lg:h-12 lg:w-12 hidden lg:block" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
+                            <Image src={footerImg} className="h-8 w-8 hidden lg:block hover:rotate-12 transition" alt="https://www.flaticon.com/free-icons/shawarma" title="shawarma icons" />
                         </div>
                         <div className="text-base md:text-base lg:text-lg text-zinc-500 mt-2 font-bold px-10 md:px-0">
                             <p>Din favorit leveret til døren på <span className="underline">30- 45 min</span></p>

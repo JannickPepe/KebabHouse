@@ -6,13 +6,14 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 
+
 const Booking = () => {
   
 
   return (
     <>
       <section className="px-4 pt-32 pb-16 md:pt-40 md:pb-16 lg:pt-40 lg:pb-24 max-w-[660px] mx-auto lg:max-w-full lg:mx-0 bg-zinc-200 dark:bg-slate-900">
-        <div className="w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
+        <div className="relative w-full max-w-6xl mx-auto shadow-lg flex flex-col-reverse lg:flex-row rounded-lg overflow-hidden">
           <Form  />
           <div className="relative overflow-hidden w-full min-h-[100px]">
             <motion.div
@@ -43,8 +44,9 @@ const Booking = () => {
 
 const Form = () => {
 
-  const [fullName, setFullName] = useState('');
   const [bookingName, setBookingName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [bookingDate, setBookingDate] = useState('');
   const [guestNumber, setGuestNumber] = useState<number | ''>('');
   const [hoursNumber, setHoursNumber] = useState<number | ''>('');
@@ -61,8 +63,9 @@ const Form = () => {
               process.env.NEXT_APPWRITE_COLLECTION_BOOKING_ID, 
               'unique()',         
               {
-                  fullName,
                   bookingName,
+                  email,
+                  phone,
                   bookingDate,
                   guestNumber,
                   hoursNumber,
@@ -73,8 +76,9 @@ const Form = () => {
         if (response) {
             setConfirmationMessage('Din Booking er nu modtaget, vh. Cafe & Kebab House');
             // Clear form fields
-            setFullName('');
             setBookingName('');
+            setEmail('');
+            setPhone('');
             setBookingDate('');
             setGuestNumber('');
             setHoursNumber('');
@@ -112,18 +116,18 @@ const Form = () => {
 
       {/* Name input */}
       <div className="mb-6">
-        <p className="text-2xl mb-2">Velkomen 👋</p>
-        <input
-          type="text"
-          placeholder="Mit navn..."
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-          required
-          className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
-        />
+        <p className="text-2xl mb-2">Navn til booking 👋</p>
+          <input
+            type="text"
+            placeholder="Dit booking navn..."
+            value={bookingName}
+            onChange={(e) => setBookingName(e.target.value)}
+            required
+            className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
+          />
       </div>
 
-      {/* booking name */}
+      {/* booking name, email and booking date */}
       <AnimatePresence>
         <motion.div
           initial={{
@@ -141,12 +145,22 @@ const Form = () => {
           transition={BASE_TRANSITION}
           className="mb-6"
         >
-          <p className="text-2xl mb-2">I hvems navn</p>
+          <p className="text-2xl my-4">Din Email til booking</p>
           <input
             type="text"
-            placeholder="Dit booking navn..."
-            value={bookingName}
-            onChange={(e) => setBookingName(e.target.value)}
+            placeholder="Din Email..."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
+          />
+
+          <p className="text-2xl my-4">Dit privat nummer</p>
+          <input
+            type="text"
+            placeholder="Dit nummer..."
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
             className={`transition-colors duration-[750ms] text-black p-2 rounded-md w-full focus:outline-0`}
           />
@@ -226,6 +240,7 @@ const Form = () => {
           {confirmationMessage}
         </p>
       )}
+
     </form>
   );
 };
